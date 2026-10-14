@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>https://www.nsfc.project.dataaccess.org</title>
+  <meta name="description" content="Data access policy and proposal form for NSFC grant W2541022: urban-environmental stress patterns affecting mental illness.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,650;1,8..60,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg0: #fdf6e3;
+      --bg-dim: #efebd4;
+      --bg1: #f4f0d9;
+      --bg2: #e6e2cc;
+      --bg3: #e0dcc7;
+      --bg-green: #f3f5d9;
+      --bg-aqua: #e7f0e4;
+      --bg-yellow: #faf3d8;
+      --fg: #4a585f;
+      --fg-strong: #3c4843;
+      --muted: #6d7b74;
+      --line: #d5d0b8;
+      --green: #6d8200;
+      --green-soft: #8da101;
+      --aqua: #2f8f6b;
+      --yellow: #9a7400;
+      --blue: #2f7eab;
+      --blue-deep: #24688f;
+      --bg-blue: #e7f2f7;
+      --orange: #c46512;
+      --red: #c44542;
+      --header-h: 64px;
+      --content: 760px;
+      --wide: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg0);
+      color: var(--fg);
+      font-family: "Source Sans 3", "Avenir Next", "Segoe UI", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+
+    a { color: var(--aqua); text-underline-offset: 0.18em; }
+    a:hover { color: var(--green); }
+
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: var(--green-soft);
+      z-index: 40;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      height: var(--header-h);
+      padding: 0 1.5rem;
+      background: rgba(253, 246, 227, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      text-decoration: none;
+      color: var(--fg-strong);
+      min-width: 9.5rem;
+    }
+    .brand strong {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+    }
+    .brand span {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .jump {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      flex: 1;
+      scrollbar-width: none;
+    }
+    .jump::-webkit-scrollbar { display: none; }
+    .jump a {
+      flex: 0 0 auto;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.84rem;
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+    }
+    .jump a.active,
+    .jump a:hover {
+      color: var(--fg-strong);
+      background: var(--bg2);
+    }
+    .header-download {
+      flex: 0 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 2.7rem;
+      padding: 0.55rem 1.15rem;
+      border: 1.5px solid var(--blue);
+      background: var(--blue);
+      color: #fdf6e3;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+    .btn:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fdf6e3; }
+    .btn.ghost {
+      background: transparent;
+      color: var(--blue);
+    }
+    .btn.ghost:hover { background: var(--bg-blue); color: var(--blue); }
+    .header-download .btn { min-height: 2.25rem; padding: 0.4rem 0.85rem; }
+
+    .hero {
+      padding: 4.5rem 1.5rem 3.25rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(141, 161, 1, 0.16), transparent 58%),
+        var(--bg1);
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker {
+      margin: 0 0 0.8rem;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 auto 0.85rem;
+      max-width: 16ch;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.05;
+      color: var(--fg-strong);
+    }
+    .subtitle {
+      margin: 0 auto;
+      max-width: 42rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--fg);
+    }
+    .zh {
+      margin: 0.45rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .lead {
+      margin: 1.75rem auto 0;
+      max-width: var(--content);
+      text-align: left;
+    }
+    .lead p { margin: 0 0 1rem; }
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    main { padding: 0 0 4rem; }
+    section {
+      scroll-margin-top: calc(var(--header-h) + 1.25rem);
+      padding: 3.5rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    section:nth-of-type(even) { background: var(--bg1); }
+    .wrap { max-width: var(--wide); margin: 0 auto; }
+    .prose { max-width: var(--content); }
+    h2 {
+      margin: 0 0 0.35rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      line-height: 1.2;
+      color: var(--fg-strong);
+    }
+    .section-index {
+      margin: 0 0 0.4rem;
+      color: var(--aqua);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h3 {
+      margin: 1.6rem 0 0.4rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--fg-strong);
+    }
+    p { margin: 0.75rem 0; }
+    ul, ol { margin: 0.6rem 0 0.6rem; padding-left: 1.2rem; }
+    li { margin: 0.35rem 0; }
+    .note {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg-yellow);
+      border-left: 3px solid var(--yellow);
+    }
+
+    .facts {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0 0;
+      background: var(--bg0);
+    }
+    .facts th, .facts td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.7rem 0.9rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .facts th {
+      width: 13rem;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .table-scroll { overflow-x: auto; margin-top: 1rem; }
+    table.holdings {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: var(--bg0);
+      font-size: 0.95rem;
+    }
+    table.holdings th, table.holdings td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    table.holdings thead th {
+      background: var(--bg-dim);
+      color: var(--fg-strong);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    table.holdings td.num, table.holdings th.num { text-align: right; white-space: nowrap; }
+    table.holdings tr.group td {
+      background: var(--bg-green);
+      color: var(--fg-strong);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.1rem;
+    }
+    .card {
+      padding: 1rem 1.05rem 0.9rem;
+      background: var(--bg0);
+      border: 1px solid var(--line);
+    }
+    .card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+    .card p { margin: 0; font-size: 0.98rem; }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.45rem 1rem;
+      margin: 0.6rem 0 0.2rem;
+      padding: 0;
+      list-style: none;
+    }
+    .checks li {
+      margin: 0;
+      padding: 0.45rem 0.65rem;
+      background: var(--bg0);
+      border: 1px solid var(--line);
+    }
+    .checks li::before {
+      content: "";
+      display: inline-block;
+      width: 0.42rem;
+      height: 0.42rem;
+      margin-right: 0.55rem;
+      background: var(--green-soft);
+      vertical-align: 0.12rem;
+    }
+
+    .people { list-style: none; padding: 0; }
+    .people li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .people strong { color: var(--fg-strong); }
+
+    footer {
+      padding: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      header { padding: 0 0.8rem; gap: 0.6rem; }
+      .jump { display: none; }
+      .hero { padding: 2.8rem 1rem 2.2rem; }
+      section { padding: 2.4rem 1rem; }
+      .facts th { width: 8.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header>
+    <a class="brand" href="#top">
+      <strong>NSFC W2541022</strong>
+      <span>Data access</span>
+    </a>
+    <nav class="jump" aria-label="Sections">
+      <a href="#policy">Policy</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#demographics">Demographics</a>
+      <a href="#design">Study design</a>
+      <a href="#legal">Legal</a>
+      <a href="#liaison">Liaison</a>
+      <a href="#proposal">Proposal</a>
+      <a href="#review">Review</a>
+      <a href="#accounts">Accounts</a>
+      <a href="#provision">Provision</a>
+      <a href="#manuscripts">Manuscripts</a>
+      <a href="#obligations">Obligations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn header-download" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download form</a>
+  </header>
+
+  <div class="hero" id="top">
+    <p class="kicker">National Natural Science Foundation of China</p>
+    <h1>Data Access Policy</h1>
+    <p class="subtitle">Identification and molecular characterisation of urban-environmental stress patterns affecting mental illness</p>
+    <p class="zh">识别城市环境压力模式对精神障碍的影响及其分子机制</p>
+    <div class="lead">
+      <p>Researchers who wish to use data from this project in a publication must submit a proposal. The proposal is circulated to the Principal Investigator and the backbone investigators named in the research plan, so that overlapping work can be identified before access is granted.</p>
+      <p>Agree a liaison investigator before you submit. One form corresponds to one manuscript. Send the completed form to <a href="mailto:gunter.schumann1961@gmail.com">gunter.schumann1961@gmail.com</a> and copy the liaison. Questions about host-institution authorisation may also be copied to <a href="mailto:nsfcfd@fudan.edu.cn">nsfcfd@fudan.edu.cn</a>.</p>
+    </div>
+    <div class="downloads">
+      <a class="btn" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download proposal form</a>
+      <a class="btn ghost" href="downloads/NSFC-W2541022-Data-Access-Policy.docx" download>Download data access policy</a>
+    </div>
+  </div>
+
+  <main>
+    <section id="policy">
+      <div class="wrap">
+        <p class="section-index">Project</p>
+        <h2>The project this policy covers</h2>
+        <div class="prose">
+          <p>This page restates the NSFC W2541022 Data Access Policy and the items on the Data Access Proposal Form. Counts below are those in the policy prepared from the working dataset through 28 September 2026. Current counts are given by the data manager on request and are supplied with each approved extract.</p>
+        </div>
+        <table class="facts">
+          <tbody>
+            <tr><th>Funding body</th><td>National Natural Science Foundation of China (NSFC)</td></tr>
+            <tr><th>Programme</th><td>Science Fund for Global Challenges and Sustainability — International Collaboration Fund for Creative Research Teams</td></tr>
+            <tr><th>Grant number</th><td>W2541022</td></tr>
+            <tr><th>Principal Investigator</th><td>Professor Gunter Schumann</td></tr>
+            <tr><th>Host institution</th><td>Fudan University (Huashan Hospital and the Institute of Science and Technology of Brain-inspired Intelligence, ISTBI)</td></tr>
+            <tr><th>Grant period</th><td>1 January 2026 – 31 December 2028</td></tr>
+            <tr><th>Application code</th><td>H1011 &nbsp; New technologies and methods for mental disorders and psychological health</td></tr>
+            <tr><th>Form to use</th><td>NSFC W2541022 Data Access Proposal Form</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="dataset">
+      <div class="wrap">
+        <p class="section-index">The dataset</p>
+        <h2>The NSFC dataset</h2>
+        <div class="prose">
+          <p>The NSFC dataset is the data generated under grant W2541022. It joins four collection systems: the electronic data capture system (EDC), which holds registration, demographic and medical history, clinical follow-up, medication, adverse event, biosample and hair-sample records, and the login-code mapping; the iDianji application, which holds ecological momentary assessment and smartphone sensing; Huawei wearable devices carried through Huawei Health, which hold continuous physiology, sleep, physical activity and location; and the biosample and omics pipelines. Each system writes its own tables with its own participant key. The coordinating centre holds the mapping between keys and issues research extracts in which direct identifiers are replaced by an anonymous participant code.</p>
+          <p>Recruitment is under way and the dataset grows every week. At the time this version of the policy was prepared, 244 participants had been registered at the three centres between 25 February and 28 September 2026: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder. Of these, 142 had completed the study, 68 were in follow-up, 21 had left the study and 13 were still in screening. Registration by centre was Huashan Hospital of Fudan University 88, Peking University Sixth Hospital 84, and Shanghai Mental Health Center 72.</p>
+          <p>Coverage is uneven across streams. Not every participant contributes to every stream, and 1-minute wearable streams start later than the 10-minute streams. Applicants should request the counts for the variables they intend to use before they fix an analysis plan, because the number with complete data is smaller than the number registered.</p>
+        </div>
+        <div class="table-scroll">
+          <table class="holdings">
+            <thead>
+              <tr>
+                <th>Data stream</th>
+                <th class="num">Records</th>
+                <th class="num">Participants</th>
+                <th>Period covered</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group"><td colspan="4">Electronic data capture (EDC)</td></tr>
+              <tr><td>Participant registration, group, centre and study status</td><td class="num">244</td><td class="num">244</td><td>25 Feb – 28 Sep 2026</td></tr>
+              <tr><td>Demographic and medical history</td><td class="num">225</td><td class="num">225</td><td>2026</td></tr>
+              <tr><td>Clinical follow-up assessments (MINI, HAMD-17, HAMA-14, BDI, PHQ-9, GAD-7, PSS-10, AUDIT)</td><td class="num">817</td><td class="num">227</td><td>Mar – Sep 2026</td></tr>
+              <tr><td>Medication records (drug, dose, route, frequency)</td><td class="num">330</td><td class="num">189</td><td>2026</td></tr>
+              <tr><td>Adverse events</td><td class="num">36</td><td class="num">31</td><td>2026</td></tr>
+              <tr><td>Biosample aliquots (plasma 2,716; urine 1,705; whole blood 1,363; RNA 685; white cells 684; red cells 341)</td><td class="num">7,494</td><td class="num">218</td><td>to 28 Sep 2026</td></tr>
+              <tr><td>Hair samples, with haircare and sun-exposure metadata</td><td class="num">86</td><td class="num">85</td><td>to 28 Sep 2026</td></tr>
+              <tr><td>Login-code mapping between participant code and app account</td><td class="num">239</td><td class="num">239</td><td>2026</td></tr>
+
+              <tr class="group"><td colspan="4">iDianji ecological momentary assessment and smartphone sensing</td></tr>
+              <tr><td>Questionnaire instances delivered (My Day, My Spots, My Route, PSS-10, audio recording)</td><td class="num">67,143</td><td class="num">207</td><td>Apr – Sep 2026</td></tr>
+              <tr><td>EMA submissions</td><td class="num">8,863</td><td class="num">196</td><td>Apr – Sep 2026</td></tr>
+              <tr><td>Item-level responses to EMA prompts</td><td class="num">295,838</td><td class="num">196</td><td>Apr – Sep 2026</td></tr>
+              <tr><td>Geocoded EMA locations (longitude, latitude, address, district)</td><td class="num">4,203</td><td class="num">149</td><td>12 Apr – 28 Sep 2026</td></tr>
+              <tr><td>Check-in (punch-card) records</td><td class="num">7,128</td><td class="num">195</td><td>May – Sep 2026</td></tr>
+              <tr><td>Device terminal records (location, activity state, accelerometer)</td><td class="num">634,663</td><td class="num">205</td><td>Apr – Sep 2026</td></tr>
+              <tr><td>Daily step counts recorded by the phone</td><td class="num">1,878</td><td class="num">97</td><td>Apr – Sep 2026</td></tr>
+              <tr><td>Prompt and reminder messages sent to participants</td><td class="num">121,209</td><td class="num">207</td><td>Apr – Sep 2026</td></tr>
+              <tr><td>Participant ranking records</td><td class="num">6,339</td><td class="num">207</td><td>2026</td></tr>
+              <tr><td>Application account profile (nickname, year of birth, self-reported age and sex)</td><td class="num">201</td><td class="num">201</td><td>2026</td></tr>
+              <tr><td>Login-code accounts</td><td class="num">239</td><td class="num">239</td><td>2026</td></tr>
+              <tr><td>Data dictionary: 15 questionnaires, 124 items, 301 options, 8 item categories, 21 logic rules (no participant data)</td><td class="num">469</td><td class="num">—</td><td>2026</td></tr>
+
+              <tr class="group"><td colspan="4">Wearable device (Huawei Watch GT6)</td></tr>
+              <tr><td>Heart rate, 1-minute buckets</td><td class="num">2,566,858</td><td class="num">194</td><td>May – Sep 2026</td></tr>
+              <tr><td>Heart rate, 10-minute buckets</td><td class="num">689,005</td><td class="num">208</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Steps, 1-minute buckets</td><td class="num">930,952</td><td class="num">202</td><td>May – Sep 2026</td></tr>
+              <tr><td>Steps, 10-minute buckets</td><td class="num">300,032</td><td class="num">214</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Distance, 1-minute buckets</td><td class="num">961,013</td><td class="num">202</td><td>May – Sep 2026</td></tr>
+              <tr><td>Distance, 10-minute buckets</td><td class="num">301,181</td><td class="num">214</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Energy expenditure, 1-minute buckets</td><td class="num">1,100,886</td><td class="num">202</td><td>May – Sep 2026</td></tr>
+              <tr><td>Energy expenditure, 10-minute buckets</td><td class="num">317,463</td><td class="num">214</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Blood oxygen saturation, 1-minute buckets</td><td class="num">164,828</td><td class="num">149</td><td>May – Sep 2026</td></tr>
+              <tr><td>Blood oxygen saturation, 10-minute buckets</td><td class="num">206,451</td><td class="num">160</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Stress index, hourly</td><td class="num">100,342</td><td class="num">207</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Sleep, nightly summary with sleep stages and fragmentation</td><td class="num">5,741</td><td class="num">200</td><td>Feb – Sep 2026</td></tr>
+              <tr><td>Device location, 10-minute buckets</td><td class="num">61,154</td><td class="num">202</td><td>Mar – Sep 2026</td></tr>
+              <tr><td>Physical activity sessions (type, duration, calories, VO2max)</td><td class="num">1,902</td><td class="num">148</td><td>Mar – Sep 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="demographics">
+      <div class="wrap prose">
+        <p class="section-index">Variables</p>
+        <h2>Basic demographic variables</h2>
+        <p>Basic demographic variables are scattered across the registration record, the demographic and medical history form, the application account record and the follow-up assessments. They are not held in one table, and applicants should expect to assemble them from more than one source.</p>
+        <h3>Age</h3>
+        <p>Recorded as age in years at assessment in the demographic history form, and as year of birth in the registration record. Because the study has repeated assessments, age belongs to an assessment rather than to the participant: the same participant has an age at baseline and an age at each follow-up.</p>
+        <h3>Sex</h3>
+        <p>Recorded in the registration record (Male/Female) and again in the application account record (M/F).</p>
+        <h3>Education, occupation and marital status</h3>
+        <p>Recorded in the demographic history form, together with handedness, height, weight, place of origin and the district of residence.</p>
+        <h3>Recruitment centre</h3>
+        <p>Recorded in the registration record as the centre that enrolled the participant, and repeated on the biosample records.</p>
+        <h3>Group</h3>
+        <p>Recorded at registration as healthy control, generalised anxiety disorder, major depressive disorder or alcohol use disorder. The clinical diagnosis recorded at assessment is also held in the demographic history form.</p>
+      </div>
+    </section>
+
+    <section id="design">
+      <div class="wrap">
+        <p class="section-index">Research plan</p>
+        <h2>Data collection as designed</h2>
+        <div class="prose">
+          <p>The design below is the approved research plan. It is the target for the study as a whole and not a description of what has been collected so far. The counts in the sections above are the ones that apply to a request.</p>
+          <p>The project will recruit 680 adults aged 18–50 years, with a balanced sex distribution, from outpatient services in Shanghai and Beijing. There are four groups of 170 participants: major depressive disorder, anxiety disorder, alcohol use disorder, and healthy controls. Diagnoses follow ICD-10 or DSM-5. Comorbidity is allowed. Recruitment centres are Huashan Hospital of Fudan University, Shanghai Mental Health Center, and Peking University Sixth Hospital. The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital.</p>
+          <p>Each enrolled participant completes a baseline clinical visit, four weeks of smartphone and wearable monitoring, and an end-of-study assessment. Blood (24 mL, in EDTA, heparin, and Tempus tubes) and urine are collected once, at the start of the study. The released research dataset uses a unique anonymous code on every record. Names, contact details, and government identity numbers are not part of the dataset provided for analysis.</p>
+          <p>This policy covers data generated by grant W2541022. It does not grant access to ZIB, IMAGEN, or STRATIFY. Each of those resources has its own application route and its own approvals. Approval of this form does not approve those datasets. The NSFC research plan names them only as external validation cohorts.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Demographics</h3>
+            <p>Age, sex, education, occupation, marital status, height, weight, and recruitment centre.</p>
+          </article>
+          <article class="card">
+            <h3>Clinical characterisation</h3>
+            <p>MINI diagnostic interview; medical, surgical, family, and social history; allergies; current and past medication, including dose and duration.</p>
+          </article>
+          <article class="card">
+            <h3>Repeated psychological measures</h3>
+            <p>AUDIT, PHQ-9, and GAD-7 twice weekly; cue-induced craving on a visual analogue scale; the Trier Inventory for Chronic Stress at the beginning and end; one or two Perceived Stress Scale items daily and the full scale twice weekly; surveys of urbanicity, eco-anxiety, and mental resilience; participant feedback.</p>
+          </article>
+          <article class="card">
+            <h3>iDianji ecological momentary assessment</h3>
+            <p>My Spots, My Route, and My Day; Likert ratings of emotional state; attribution of heart-rate changes; activity and social context; free text; self-initiated prompts; heart-rate-triggered prompts; and random control prompts. The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use.</p>
+          </article>
+          <article class="card">
+            <h3>Wearable physiology</h3>
+            <p>Huawei Watch GT6. Heart rate by photoplethysmography at 1-minute and 10-minute resolution; blood oxygen saturation; a device stress index reported hourly; nightly sleep summary with stages; steps, distance and energy expenditure; physical activity sessions with duration, heart-rate range, cadence and VO2max; and device location with altitude.</p>
+          </article>
+          <article class="card">
+            <h3>Location and environmental exposure</h3>
+            <p>Latitude and longitude time series from GPS, Wi-Fi, and mobile-network location, linked by authorised staff to environMAP layers for urbanicity and land cover, natural space, climate and weather, air pollution, and regional socioeconomic status.</p>
+          </article>
+          <article class="card">
+            <h3>Multi-omics</h3>
+            <p>Illumina Chinese Genotyping Array genotypes; Illumina EPIC DNA methylation (about 935,000 sites); Illumina NovaSeq RNA sequencing; and plasma proteomics by mass spectrometry or antibody-based assays.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="legal">
+      <div class="wrap">
+        <p class="section-index">Governance</p>
+        <h2>Legal and regulatory requirements</h2>
+        <div class="prose">
+          <p>Release of these data is governed by the law of the People’s Republic of China. The host institution holds the data and carries the statutory duties. Approval by the access-review group is a scientific approval. It does not by itself satisfy a statutory requirement, and no extract is released until the host institution has cleared the requirements that apply to that request.</p>
+          <p>The host institution decides which requirements apply to a request and carries them out. Applicants should allow time for them: ethics review alone may take up to 30 days, and a Ministry decision on human genetic resource information takes longer.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Ethics review of the secondary use</h3>
+            <p>Reusing participant data is research involving human participants. The institution that provides the data must have the proposed use reviewed by its ethics committee and must fix by agreement the scope of use, how the data are handled, and how they are disposed of at the end (Measures for the Ethics Review of Life Science and Medical Research Involving Humans, 2023, Article 28). Where a study qualifies for expedited review or for exemption, the committee records that decision; exemption does not apply where sensitive personal information is involved. The manuscript must cite the approval that covers this use (Article 29). State an ethics approval number on the form; that number is confirmed by the host institution at the time of access.</p>
+          </article>
+          <article class="card">
+            <h3>Human genetic resource information</h3>
+            <p>Under the Implementing Rules of the Regulation on the Administration of Human Genetic Resources (Ministry of Science and Technology Order No. 21, in force 1 July 2023, Article 2), human genetic resource information is human gene and genome data. It does not include clinical data, imaging data, protein data or metabolic data. In this dataset, genotypes, DNA methylation and RNA sequencing are treated as human genetic resource information. Plasma proteomics is not, but it remains sensitive personal information. Planned enrolment of 680 participants is below the 3,000-participant threshold at which a collection licence would be required (Article 27).</p>
+          </article>
+          <article class="card">
+            <h3>Provision to an overseas recipient</h3>
+            <p>Only a Chinese unit may provide Chinese human genetic resources to an overseas recipient. An overseas organisation, or an institution established or actually controlled by one, may not collect, preserve or provide them (Article 11). Providing or opening human genetic resource information to such a recipient requires prior reporting to the Ministry of Science and Technology and submission of an information backup (Article 36). It must also pass the security review organised by the Ministry where the information may affect public health, national security or the public interest, including exome or genome sequencing information on more than 500 persons (Article 37). With 680 participants, the genomic data in this project are above the 500-person threshold, so a request that gives an overseas recipient genomic data is treated as requiring security review until the Ministry decides otherwise.</p>
+          </article>
+          <article class="card">
+            <h3>Personal information and cross-border access</h3>
+            <p>A psychiatric diagnosis and a location trajectory are sensitive personal information under the Personal Information Protection Law. Letting an overseas body access or process data held on a server in China counts as providing data overseas, even though the data do not leave the country (Provisions on Promoting and Regulating Cross-Border Data Flows, 2024). Where sensitive personal information of fewer than 10,000 individuals is provided in a calendar year, a standard contract with the overseas recipient or personal information protection certification is required; at or above 10,000 individuals, a security assessment must be declared. Before any such provision the host institution must give notice, obtain separate consent where the law requires it, and carry out a personal information protection impact assessment.</p>
+          </article>
+          <article class="card">
+            <h3>Storage, minimum necessary, and records</h3>
+            <p>Data stay on servers in the Chinese mainland. Access is granted to named individuals and is limited to the variables the approved manuscript needs. The host institution keeps a record of every extract, of the people named on it and of the period of access. Where a request involves international scientific cooperation, the Chinese unit must take part substantively throughout, all records and data must be open to the Chinese unit and backed up to it, and the two sides submit a joint report on the cooperation within six months after the approval or filing period ends (Articles 14 and 35).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="liaison">
+      <div class="wrap prose">
+        <p class="section-index">I</p>
+        <h2>Alignment with a project investigator</h2>
+        <p>The applicant must align with one investigator of this project before the proposal is submitted. The alignment may rest on earlier collaboration or on shared questions and methods. That investigator is the liaison: the proposal names the liaison, and the liaison is copied on submission. A proposal without a liaison who has agreed to the role is not circulated. The choice should match the data domain being requested.</p>
+        <ul class="people">
+          <li><strong>Professor Gunter Schumann</strong>, Fudan University — Principal Investigator.</li>
+          <li><strong>Professor Min Zhao</strong>, Shanghai Mental Health Center — recruitment and clinical characterisation.</li>
+          <li><strong>Professor Weihua Yue</strong>, Peking University Sixth Hospital — multi-omics.</li>
+          <li><strong>Associate Professor Hang Su</strong>, Shanghai Mental Health Center — ecological momentary assessment.</li>
+          <li><strong>Associate Professor Xiao Chang</strong>, Fudan University — multi-omics and imaging genetics.</li>
+          <li><strong>Professor Tianye Jia</strong>, Peking University — ecological momentary assessment and geospatial analysis.</li>
+        </ul>
+        <p>The proposal form also names Professor Frauke Nees (LMU Munich) and Professor Bin Chen (The University of Hong Kong) as eligible liaisons. Choose the liaison whose work package covers the data you request.</p>
+      </div>
+    </section>
+
+    <section id="proposal">
+      <div class="wrap">
+        <p class="section-index">II · The form</p>
+        <h2>What the proposal must contain</h2>
+        <div class="prose">
+          <p>The proposal is written on the NSFC Data Access Proposal Form. Tick every item you request. An unticked item is not requested. Request only the participants, time points, and variables required for that manuscript.</p>
+          <ol>
+            <li>Be sized to produce one publication. One proposal equals one manuscript. A general programme that could lead to several manuscripts is not accepted. A further manuscript requires a new proposal.</li>
+            <li>Name the liaison investigator and give that person’s institution.</li>
+            <li>Name every person who will have access to participant-level data, with institution, role, and country of access. Say whether any named user is outside the Chinese mainland, and if so the country of access for each user.</li>
+            <li>Indicate every data domain requested.</li>
+            <li>Describe the planned analyses, the inclusion and exclusion rules for the analysis sample, and the approximate period for which access is needed, including when the manuscript will be submitted.</li>
+          </ol>
+          <p>State the question and the method in the project proposal: background, aim, and references. Be specific. The form also asks for main analyses and any other models, for example mixed-effects models, growth curves, sparse canonical correlation, graphical LASSO, Bayesian networks, MOFA+, or a named machine-learning model.</p>
+          <p class="note">If the manuscript will also use Zhangjiang International Biobank, IMAGEN, or STRATIFY data, apply to those cohorts under their own rules. Approval of this form does not approve those datasets.</p>
+        </div>
+
+        <h3>1. Participant group, centre and phase</h3>
+        <p>The study recruits 170 participants in each group, aged 18–50 years. Monitoring with iDianji and the Huawei Watch GT6 lasts four weeks. Biosamples are taken once, at baseline.</p>
+        <ul class="checks">
+          <li>Major depressive disorder (MDD)</li>
+          <li>Anxiety disorder (ANX)</li>
+          <li>Alcohol use disorder (AUD)</li>
+          <li>Healthy controls (CON)</li>
+          <li>Huashan Hospital, Fudan University</li>
+          <li>Shanghai Mental Health Center</li>
+          <li>Peking University Sixth Hospital</li>
+          <li>All three centres</li>
+          <li>Screening and baseline clinical visit</li>
+          <li>Four-week iDianji and wearable monitoring</li>
+          <li>End-of-study assessment</li>
+          <li>All phases</li>
+        </ul>
+
+        <h3>2. Clinical characterisation</h3>
+        <ul class="checks">
+          <li>MINI diagnostic interview</li>
+          <li>Medical and surgical history</li>
+          <li>Family medical history</li>
+          <li>Social history</li>
+          <li>Allergies</li>
+          <li>Current and past medication (drug, dose, duration)</li>
+          <li>SSRI stability (citalopram or escitalopram)</li>
+          <li>AUD withdrawal status</li>
+          <li>Therapy and treatment-monitoring status</li>
+          <li>Participant feedback on the study procedures</li>
+        </ul>
+
+        <h3>3. Repeated psychological measures</h3>
+        <p>AUDIT, PHQ-9, GAD-7, and the full Perceived Stress Scale are administered twice a week. One or two Perceived Stress Scale items are presented daily. The Trier Inventory for Chronic Stress is administered at the beginning and at the end.</p>
+        <ul class="checks">
+          <li>AUDIT</li>
+          <li>PHQ-9</li>
+          <li>GAD-7</li>
+          <li>Cue-induced craving, visual analogue scale</li>
+          <li>Trier Inventory for Chronic Stress (TICS)</li>
+          <li>Perceived Stress Scale, daily items</li>
+          <li>Perceived Stress Scale, full scale</li>
+          <li>Urbanicity, eco-anxiety, and mental resilience surveys</li>
+        </ul>
+
+        <h3>4. Demographic variables</h3>
+        <ul class="checks">
+          <li>Age</li>
+          <li>Sex</li>
+          <li>Education</li>
+          <li>Occupation</li>
+          <li>Marital status</li>
+          <li>Height and weight</li>
+          <li>Recruitment centre</li>
+          <li>Anonymous participant code only</li>
+        </ul>
+
+        <h3>5. iDianji ecological momentary assessment</h3>
+        <p>iDianji records My Spots, My Route, and My Day. Prompts are self-initiated, triggered when heart rate departs from the participant’s baseline, or delivered as random control prompts. Free text is released only after identifying details have been removed, unless the proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
+        <ul class="checks">
+          <li>My Spots</li>
+          <li>My Route</li>
+          <li>My Day</li>
+          <li>Likert rating of emotional state</li>
+          <li>Attribution of heart-rate change (emotion, activity, or unknown)</li>
+          <li>Recent activity and social context</li>
+          <li>Free-text report</li>
+          <li>Self-initiated prompts</li>
+          <li>Heart-rate-triggered prompts</li>
+          <li>Random control prompts</li>
+          <li>Compliance and response rate</li>
+          <li>Sleep metrics reported by the participant</li>
+        </ul>
+
+        <h3>6. Wearable physiology (Huawei Watch GT6)</h3>
+        <ul class="checks">
+          <li>Heart rate, 1-minute buckets</li>
+          <li>Heart rate, 10-minute buckets</li>
+          <li>Blood oxygen saturation</li>
+          <li>Stress index, hourly</li>
+          <li>Sleep, nightly summary with sleep stages</li>
+          <li>Step count, distance and energy expenditure</li>
+          <li>Physical activity sessions (type, duration, VO2max)</li>
+          <li>Device location with altitude</li>
+        </ul>
+
+        <h3>7. Geolocation and environMAP</h3>
+        <p>Location is stored as a latitude and longitude time series from GPS, Wi-Fi, and mobile-network positioning. Linkage to environMAP is done by authorised staff. Tick derived features unless the analysis cannot be done without coordinates. If you tick precise coordinates or raw audio, state why derived variables are not sufficient.</p>
+        <ul class="checks">
+          <li>Derived mobility only (radius, distance, entropy, time at home, stay points)</li>
+          <li>Precise coordinates (separate justification required)</li>
+          <li>Urbanicity and land cover</li>
+          <li>Natural space and greenness</li>
+          <li>Climate and weather extremes</li>
+          <li>Air pollution</li>
+          <li>Regional socioeconomic status</li>
+          <li>Night-time lights and population density</li>
+        </ul>
+
+        <h3>8. Biological samples and multi-omics</h3>
+        <p>Blood (24 mL: two EDTA tubes, two heparin tubes, two Tempus tubes) and urine are collected once at baseline and stored at −80 °C. Genotypes, methylation, and RNA sequencing are human genetic resources. Access from outside the Chinese mainland is not opened until the host institution confirms the required transfer arrangement. Tick only the layers this manuscript will analyse.</p>
+        <ul class="checks">
+          <li>Genotypes, Illumina Chinese Genotyping Array</li>
+          <li>DNA methylation, Illumina EPIC (about 935,000 sites)</li>
+          <li>RNA sequencing, Illumina NovaSeq</li>
+          <li>Plasma proteomics (mass spectrometry or antibody assay)</li>
+          <li>Urine measures, if assayed for this project</li>
+          <li>Sample-quality and processing metadata only</li>
+        </ul>
+
+        <div class="downloads" style="justify-content:flex-start; margin-top:1.75rem;">
+          <a class="btn" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download proposal form</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="review">
+      <div class="wrap prose">
+        <p class="section-index">III</p>
+        <h2>Submission and review</h2>
+        <p>Send the completed form to the Principal Investigator at <a href="mailto:gunter.schumann1961@gmail.com">gunter.schumann1961@gmail.com</a>, with the liaison investigator in copy. Questions about host-institution authorisation may also be copied to the Fudan University research office at <a href="mailto:nsfcfd@fudan.edu.cn">nsfcfd@fudan.edu.cn</a>.</p>
+        <p>The Principal Investigator, or a coordinator the Principal Investigator designates, circulates the proposal to the backbone investigators named in the research plan and to the people named on the proposal. Those backbone investigators are Professor Min Zhao, Professor Weihua Yue, Associate Professor Hang Su, and Associate Professor Xiao Chang. The work-package lead is consulted when a request falls in that lead’s domain. In this policy, these reviewers are called the access-review group. The research plan does not create a separate named committee.</p>
+        <p>The access-review group has 10 working days to comment, including comments on overlap with work already underway. If that period passes without comment, or if requested changes have been agreed, the Principal Investigator writes to the applicants to confirm approval. An incomplete form is not treated as approved by silence.</p>
+      </div>
+    </section>
+
+    <section id="accounts">
+      <div class="wrap prose">
+        <p class="section-index">IV</p>
+        <h2>Accounts, and access from outside the Chinese mainland</h2>
+        <p>After approval:</p>
+        <ol>
+          <li>The Principal Investigator, or a data contact the Principal Investigator designates, opens an account only for each person named on the proposal. Accounts are personal and are closed at the end of the approved period.</li>
+          <li>Access is limited to the approved groups, centres, time points, and variables.</li>
+          <li>If any named user is outside the Chinese mainland, or if the proposal asks to export participant-level data, access is not opened until the host institution has completed the data-transfer arrangement required for that transfer. Genotypes, methylation data, and RNA-sequencing data are human genetic resources of participants recruited in China. Foreign remote access to those data is treated as an international transfer even if the server remains in China. This policy does not replace approval by the responsible institutional office.</li>
+          <li>Precise coordinates, raw microphone recordings, and free-text entries are not released as a routine extract. They are released only when the proposal explains why derived mobility, derived noise, or reviewed text is not sufficient, and the access-review group agrees.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="provision">
+      <div class="wrap prose">
+        <p class="section-index">V</p>
+        <h2>How approved data are provided</h2>
+        <p>The research plan states that electronic data are stored on secure password-protected servers, with access limited to authorised members of the research team. After approval, the Principal Investigator, or a data contact the Principal Investigator designates, sends each named user a username, a password, and the address of that server. The address is not published in this policy.</p>
+        <p>Users must not place participant-level data on personal cloud storage, shared drives, or removable media, and must not pass data or passwords to anyone who is not named on the proposal. Environmental linkage to environMAP is carried out inside the project’s spatial-data infrastructure, or by authorised staff, as stated in the research plan. Applicants ordinarily receive the linked exposure variables, not a separate copy of the environMAP catalogue.</p>
+      </div>
+    </section>
+
+    <section id="manuscripts">
+      <div class="wrap prose">
+        <p class="section-index">VI</p>
+        <h2>Manuscripts</h2>
+        <p>Every manuscript that uses these data must:</p>
+        <ul>
+          <li>Acknowledge support from the National Natural Science Foundation of China, grant W2541022.</li>
+          <li>Name the liaison investigator.</li>
+          <li>Include, either as authors or in a supplementary consortium list, the project members responsible for the data domains used. The Principal Investigator keeps the current list.</li>
+        </ul>
+        <p>Authorship follows scholarly contribution. Holding an account, acting as liaison, or taking part in access review does not by itself confer authorship. The Principal Investigator’s commitment in the research plan also applies: published work supported by this grant is acknowledged as such, and authorship is not offered to people who did not contribute.</p>
+      </div>
+    </section>
+
+    <section id="obligations">
+      <div class="wrap">
+        <p class="section-index">VII · Terms on the form</p>
+        <h2>Obligations of approved users</h2>
+        <div class="prose">
+          <ul>
+            <li>Use the data only for the approved manuscript, and only the people named on the form will have access to participant-level data.</li>
+            <li>Comply with the Personal Information Protection Law of the People’s Republic of China and with the consent under which these data were collected.</li>
+            <li>Do not attempt to identify a participant, contact a participant, or match the dataset to an external source that would identify a participant.</li>
+            <li>Do not reconstruct a participant’s home, workplace, or daily route except as part of an analysis the access-review group has approved.</li>
+            <li>If omics data were requested, use those data only for the analyses stated on the form.</li>
+            <li>Keep participant-level data on systems inside the Chinese mainland. Do not copy it to a system outside the Chinese mainland, and do not give an overseas institution access to it or to an account.</li>
+            <li>Hold ethics approval for this secondary use at the applicant’s own institution, or have applied for it, and give the approval number before an extract is released.</li>
+            <li>If the request includes genetic, methylation or RNA-sequencing data, provision to an overseas recipient, or access by one, requires prior reporting to the Ministry of Science and Technology with an information backup, and may require security review, before any data are released.</li>
+            <li>ZIB, IMAGEN, and STRATIFY are not released under this form.</li>
+            <li>A change of aim, users, institutions, country of access, or data domain needs a written amendment or a new proposal before the change is made.</li>
+            <li>When the approved period ends, delete local copies that are no longer authorised and tell the Principal Investigator.</li>
+            <li>Report loss, unauthorised access, or accidental disclosure to the Principal Investigator without delay.</li>
+          </ul>
+          <p>The Principal Investigator may suspend an account if continued use conflicts with consent, ethics approval, or this policy. The project’s own ethics approval and consent govern what may be shared. This document does not state an ethics approval number; that number is confirmed by the host institution at the time of access.</p>
+          <p>The form is signed by the lead investigator, the liaison investigator, and the Principal Investigator, Professor Gunter Schumann, Fudan University. The liaison signature and the Principal Investigator signature are both required to use data from grant W2541022.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="section-index">Contact</p>
+        <h2>Where to send the form</h2>
+        <table class="facts">
+          <tbody>
+            <tr><th>Scientific submission</th><td>Professor Gunter Schumann, <a href="mailto:gunter.schumann1961@gmail.com">gunter.schumann1961@gmail.com</a></td></tr>
+            <tr><th>Copy on every submission</th><td>The liaison investigator named on the form</td></tr>
+            <tr><th>Host institution office</th><td>Wang Hao (王浩), <a href="mailto:nsfcfd@fudan.edu.cn">nsfcfd@fudan.edu.cn</a>, 021-31243722</td></tr>
+            <tr><th>Form to use</th><td>NSFC W2541022 Data Access Proposal Form</td></tr>
+          </tbody>
+        </table>
+        <div class="downloads" style="justify-content:flex-start;">
+          <a class="btn" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download proposal form</a>
+          <a class="btn ghost" href="downloads/NSFC-W2541022-Data-Access-Policy.docx" download>Download data access policy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    NSFC grant W2541022 · Fudan University · Counts through 28 September 2026
+  </footer>
+
+  <script>
+    const bar = document.getElementById("progress");
+    const links = [...document.querySelectorAll(".jump a")];
+    const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+
+    function onScroll() {
+      const scrolled = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + "%";
+
+      const line = window.innerHeight * 0.45;
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= line) current = section;
+      }
+      links.forEach((link) => {
+        link.classList.toggle("active", current && link.getAttribute("href") === "#" + current.id);
+      });
+    }
+
+    document.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
