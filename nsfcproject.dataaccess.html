@@ -459,6 +459,21 @@
       place-items: center;
       color: var(--blue-deep);
     }
+    .dataset-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 1.25rem 1.75rem;
+      align-items: start;
+    }
+    .dataset-layout .prose { max-width: none; }
+    .dataset-side {
+      margin: 0;
+      position: sticky;
+      top: calc(var(--header-h) + 1rem);
+    }
+    .dataset-side .study-fig-people,
+    .dataset-side .dataset-join { grid-template-columns: 1fr; }
+    .dataset-side .dataset-arrow svg { transform: rotate(90deg); }
     @media (max-width: 860px) {
       header { align-items: flex-start; flex-direction: column; }
       .nav { justify-content: flex-start; }
@@ -474,6 +489,8 @@
       .study-fig-path { grid-template-columns: 1fr; }
       .dataset-join { grid-template-columns: 1fr; }
       .dataset-arrow svg { transform: rotate(90deg); }
+      .dataset-layout { grid-template-columns: 1fr; }
+      .dataset-side { position: static; }
       .design-cards { columns: 1; }
     }
 </style>
@@ -518,6 +535,8 @@
     <div class="view" id="about" hidden>
 <section id="dataset">
       <div class="wrap">
+        <div class="dataset-layout">
+        <div>
         <p class="section-index">The dataset</p>
         <h2>The NSFC dataset</h2>
         <div class="prose">
@@ -525,7 +544,8 @@
           <p>Recruitment is under way and the dataset grows every week. At the time this version of the policy was prepared, 244 participants had been registered at the three centres between 25 February and 28 September 2026: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder. Of these, 142 had completed the study, 68 were in follow-up, 21 had left the study and 13 were still in screening. Registration by centre was Huashan Hospital of Fudan University 88, Peking University Sixth Hospital 84, and Shanghai Mental Health Center 72.</p>
           <p>Coverage is uneven across streams. Not every participant contributes to every stream, and 1-minute wearable streams start later than the 10-minute streams. Applicants should request the counts for the variables they intend to use before they fix an analysis plan, because the number with complete data is smaller than the number registered.</p>
         </div>
-        <figure class="study-fig" aria-label="Four collection systems. Each keeps its own participant key. The coordinating centre maps those keys and releases a research extract under an anonymous participant code.">
+        </div>
+        <figure class="study-fig dataset-side" aria-label="Four collection systems. Each keeps its own participant key. The coordinating centre maps those keys and releases a research extract under an anonymous participant code.">
           <p class="study-fig-kicker">Four collection systems</p>
           <div class="study-fig-people">
             <div class="study-fig-person">
@@ -557,6 +577,7 @@
             <p class="dataset-node">Research extract<span>Anonymous participant code</span></p>
           </div>
         </figure>
+        </div>
         <div class="table-scroll">
           <table class="holdings">
             <thead>
