@@ -431,6 +431,34 @@
     }
     .study-fig-devices { display: flex; align-items: flex-end; gap: 0.85rem; }
     .study-fig-note { color: var(--muted); font-size: 0.88rem; }
+    .dataset-join {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr) auto minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: stretch;
+      margin-top: 1.15rem;
+    }
+    .dataset-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      margin: 0;
+      padding: 0.75rem 0.7rem;
+      text-align: center;
+      background: #e5f4fb;
+      border-radius: 8px;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .dataset-node span { color: var(--ink); font-weight: 400; font-size: 0.92rem; }
+    .dataset-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--blue-deep);
+    }
     @media (max-width: 860px) {
       header { align-items: flex-start; flex-direction: column; }
       .nav { justify-content: flex-start; }
@@ -444,6 +472,8 @@
       .centres { grid-template-columns: 1fr; }
       .study-fig-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .study-fig-path { grid-template-columns: 1fr; }
+      .dataset-join { grid-template-columns: 1fr; }
+      .dataset-arrow svg { transform: rotate(90deg); }
       .design-cards { columns: 1; }
     }
 </style>
@@ -495,6 +525,38 @@
           <p>Recruitment is under way and the dataset grows every week. At the time this version of the policy was prepared, 244 participants had been registered at the three centres between 25 February and 28 September 2026: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder. Of these, 142 had completed the study, 68 were in follow-up, 21 had left the study and 13 were still in screening. Registration by centre was Huashan Hospital of Fudan University 88, Peking University Sixth Hospital 84, and Shanghai Mental Health Center 72.</p>
           <p>Coverage is uneven across streams. Not every participant contributes to every stream, and 1-minute wearable streams start later than the 10-minute streams. Applicants should request the counts for the variables they intend to use before they fix an analysis plan, because the number with complete data is smaller than the number registered.</p>
         </div>
+        <figure class="study-fig" aria-label="Four collection systems. Each keeps its own participant key. The coordinating centre maps those keys and releases a research extract under an anonymous participant code.">
+          <p class="study-fig-kicker">Four collection systems</p>
+          <div class="study-fig-people">
+            <div class="study-fig-person">
+              <div class="study-fig-icon" aria-hidden="true"><svg viewBox="0 0 48 56" width="42" height="49"><rect x="10" y="10" width="28" height="38" rx="3" fill="#f5fbfe" stroke="#1b4f6b" stroke-width="1.6"/><rect x="18" y="4" width="12" height="10" rx="2" fill="#8ecae6" stroke="#1b4f6b" stroke-width="1.4"/><path d="M16 24h16M16 30h16M16 36h10" stroke="#5aa9cc" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+              <strong>EDC</strong>
+              <span>Clinical, medication, and sample records</span>
+            </div>
+            <div class="study-fig-person">
+              <div class="study-fig-icon" aria-hidden="true"><svg viewBox="0 0 32 48" width="28" height="42"><rect x="3" y="2" width="26" height="44" rx="4" fill="#f5fbfe" stroke="#1b4f6b" stroke-width="1.6"/><rect x="7" y="7" width="18" height="28" rx="1.5" fill="#8ecae6"/><circle cx="16" cy="41" r="1.5" fill="#1b4f6b"/></svg></div>
+              <strong>iDianji</strong>
+              <span>EMA and smartphone sensing</span>
+            </div>
+            <div class="study-fig-person">
+              <div class="study-fig-icon" aria-hidden="true"><svg viewBox="0 0 40 52" width="34" height="44"><rect x="15" y="1" width="10" height="8" rx="2" fill="#d9eef8" stroke="#1b4f6b" stroke-width="1.4"/><rect x="7" y="9" width="26" height="32" rx="7" fill="#f5fbfe" stroke="#1b4f6b" stroke-width="1.6"/><circle cx="20" cy="25" r="7" fill="none" stroke="#5aa9cc" stroke-width="1.6"/><path d="M20 22v4l2.5 1.5" fill="none" stroke="#1b4f6b" stroke-width="1.4" stroke-linecap="round"/><rect x="15" y="41" width="10" height="8" rx="2" fill="#d9eef8" stroke="#1b4f6b" stroke-width="1.4"/></svg></div>
+              <strong>Huawei Health</strong>
+              <span>Physiology, sleep, activity, location</span>
+            </div>
+            <div class="study-fig-person">
+              <div class="study-fig-icon" aria-hidden="true"><svg viewBox="0 0 36 52" width="30" height="44"><rect x="13" y="2" width="10" height="8" rx="2" fill="#1b4f6b"/><rect x="8" y="10" width="20" height="36" rx="6" fill="#f5fbfe" stroke="#1b4f6b" stroke-width="1.6"/><rect x="10" y="26" width="16" height="16" rx="4" fill="#8ecae6"/></svg></div>
+              <strong>Biosamples and omics</strong>
+              <span>Separate laboratory pipeline</span>
+            </div>
+          </div>
+          <div class="dataset-join">
+            <p class="dataset-node">Own participant key<span>One key in each system</span></p>
+            <div class="dataset-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h12M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <p class="dataset-node">Coordinating centre<span>Holds the mapping between keys</span></p>
+            <div class="dataset-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h12M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <p class="dataset-node">Research extract<span>Anonymous participant code</span></p>
+          </div>
+        </figure>
         <div class="table-scroll">
           <table class="holdings">
             <thead>
