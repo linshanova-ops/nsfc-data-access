@@ -461,16 +461,40 @@
     }
     .dataset-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 1.25rem 1.75rem;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.62fr);
+      gap: 1.15rem 1.35rem;
+      align-items: stretch;
     }
     .dataset-layout .prose { max-width: none; }
     .dataset-side {
+      height: 100%;
       margin: 0;
-      position: sticky;
-      top: calc(var(--header-h) + 1rem);
+      padding: 0.9rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+    .dataset-side .study-fig-kicker { margin-bottom: 0.55rem; }
+    .dataset-side .study-fig-people { gap: 0.35rem; }
+    .dataset-side .study-fig-person {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      column-gap: 0.55rem;
+      row-gap: 0;
+      align-items: center;
+      text-align: left;
+    }
+    .dataset-side .study-fig-icon {
+      grid-row: 1 / span 2;
+      height: 32px;
+      width: 34px;
+    }
+    .dataset-side .study-fig-icon svg { width: 26px; height: 26px; }
+    .dataset-side .study-fig-person strong,
+    .dataset-side .study-fig-person span { text-align: left; }
+    .dataset-side .dataset-join { margin-top: 0.65rem; gap: 0.15rem; }
+    .dataset-side .dataset-node { padding: 0.4rem 0.55rem; }
+    .dataset-side .dataset-arrow svg { width: 16px; height: 16px; }
     .dataset-side .study-fig-people,
     .dataset-side .dataset-join { grid-template-columns: 1fr; }
     .dataset-side .dataset-arrow svg { transform: rotate(90deg); }
