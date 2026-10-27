@@ -337,14 +337,16 @@
     .people { list-style: none; padding: 0; }
     .people li { padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
     .people strong { color: var(--navy); }
-    .publications-art {
-      margin: 1.1rem 0 0;
-    }
-    .publications-art img {
-      display: block;
-      width: min(100%, 460px);
-      height: auto;
-      border-radius: 12px;
+    #publications section {
+      min-height: calc(100vh - var(--header-h) - 4.5rem);
+      border-bottom: none;
+      background-color: #e7f4fb;
+      background-image:
+        linear-gradient(180deg, rgba(245, 251, 254, 0.9), rgba(231, 244, 251, 0.82) 42%, rgba(245, 251, 254, 0.9)),
+        url("images/publications-coming-soon.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     footer {
       padding: 1.5rem;
@@ -813,9 +815,6 @@
       <div class="wrap prose">
         <p class="section-index">Outputs</p>
         <h2>Publications</h2>
-        <figure class="publications-art">
-          <img src="images/publications-coming-soon.jpg" width="1024" height="1024" alt="Coming soon, stay tuned.">
-        </figure>
       </div>
     </section>
 </div>
