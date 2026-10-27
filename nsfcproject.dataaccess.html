@@ -101,6 +101,65 @@
         var(--bg-2);
       border-bottom: 1px solid var(--line);
     }
+    #home .hero {
+      background-color: #f5fbfe;
+      background-image:
+        linear-gradient(180deg, rgba(245, 251, 254, 0.9), rgba(231, 244, 251, 0.86) 42%, rgba(245, 251, 254, 0.92)),
+        url("images/home-brain.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #home .hero h1 {
+      max-width: none;
+      font-size: clamp(1.2rem, 2.15vw, 1.9rem);
+      white-space: nowrap;
+      letter-spacing: -0.015em;
+    }
+    #home .hero .subtitle {
+      max-width: 46rem;
+      margin-top: 0.85rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-weight: 650;
+      font-size: clamp(1.45rem, 2.7vw, 2.15rem);
+      line-height: 1.35;
+      color: var(--navy);
+    }
+    #home .hero .subtitle span {
+      background-image: linear-gradient(transparent 62%, rgba(142, 202, 230, 0.9) 62%);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      padding: 0 0.12em;
+    }
+    #home .fact-grid {
+      max-width: 860px;
+      margin: 2rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      text-align: left;
+    }
+    #home .fact-grid article {
+      padding: 0.85rem 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    #home .fact-grid .wide { grid-column: 1 / -1; }
+    #home .fact-grid span {
+      display: block;
+      color: var(--link);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    #home .fact-grid strong {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
     .kicker {
       margin: 0 0 0.8rem;
       color: var(--link);
@@ -378,6 +437,8 @@
       .hero { padding: 2.6rem 1rem 2rem; }
       section { padding: 2.2rem 1rem; }
       .facts th { width: 8.5rem; }
+      #home .hero h1 { white-space: normal; }
+      #home .fact-grid { grid-template-columns: 1fr; }
       .idianji-layout { grid-template-columns: 1fr; }
       .idianji-shot { position: static; max-width: 280px; }
       .centres { grid-template-columns: 1fr; }
@@ -407,23 +468,21 @@
     <section class="hero">
       <p class="kicker">National Natural Science Foundation of China</p>
       <h1>Urban environmental stress and mental illness</h1>
-      <p class="subtitle">Identification and molecular characterisation of urban-environmental stress patterns affecting mental illness</p>
+      <p class="subtitle"><span>Identification and molecular characterisation of urban-environmental stress patterns affecting mental illness</span></p>
       <p class="zh">识别城市环境压力模式对精神障碍的影响及其分子机制</p>
       <div class="lead">
         <p>This project, grant W2541022, studies how patterns of urban and environmental stress relate to mental illness, and the molecular measures that travel with those patterns. It recruits adults in Shanghai and Beijing and follows each person through a clinical visit, four weeks of smartphone and wearable monitoring, and an end-of-study assessment.</p>
         <p>Recruitment is under way. At the 28 September 2026 snapshot used in the data-access materials, 244 participants had been registered: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder.</p>
       </div>
-      <table class="facts">
-        <tbody>
-          <tr><th>Funding body</th><td>National Natural Science Foundation of China (NSFC)</td></tr>
-          <tr><th>Programme</th><td>Science Fund for Global Challenges and Sustainability — International Collaboration Fund for Creative Research Teams</td></tr>
-          <tr><th>Grant number</th><td>W2541022</td></tr>
-          <tr><th>Principal Investigator</th><td>Professor Gunter Schumann</td></tr>
-          <tr><th>Host institution</th><td>Fudan University (Huashan Hospital and the Institute of Science and Technology of Brain-inspired Intelligence, ISTBI)</td></tr>
-          <tr><th>Grant period</th><td>1 January 2026 – 31 December 2028</td></tr>
-          <tr><th>Application code</th><td>H1011 &nbsp; New technologies and methods for mental disorders and psychological health</td></tr>
-        </tbody>
-      </table>
+      <div class="fact-grid">
+        <article><span>Funding body</span><strong>National Natural Science Foundation of China</strong></article>
+        <article><span>Grant number</span><strong>W2541022</strong></article>
+        <article><span>Principal Investigator</span><strong>Professor Gunter Schumann</strong></article>
+        <article><span>Grant period</span><strong>1 January 2026 – 31 December 2028</strong></article>
+        <article class="wide"><span>Programme</span><strong>Science Fund for Global Challenges and Sustainability — International Collaboration Fund for Creative Research Teams</strong></article>
+        <article class="wide"><span>Host institution</span><strong>Fudan University (Huashan Hospital and the Institute of Science and Technology of Brain-inspired Intelligence, ISTBI)</strong></article>
+        <article class="wide"><span>Application code</span><strong>H1011 · New technologies and methods for mental disorders and psychological health</strong></article>
+      </div>
     </section>
 </div>
     <div class="view" id="about" hidden>
