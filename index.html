@@ -208,12 +208,17 @@
       margin-top: 1.1rem;
     }
     .design-cards {
-      grid-template-columns: repeat(8, minmax(0, 1fr));
+      display: block;
+      columns: 3;
+      column-gap: 0.85rem;
     }
-    .design-cards .card { grid-column: span 2; height: 100%; }
-    .design-cards .card:nth-child(5) { grid-column: 2 / span 2; }
-    .design-cards .card:nth-child(6) { grid-column: 4 / span 2; }
-    .design-cards .card:nth-child(7) { grid-column: 6 / span 2; }
+    .design-cards .card {
+      break-inside: avoid;
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 0.85rem;
+    }
     .card, .centre {
       padding: 1rem 1.05rem 0.95rem;
       background: var(--card);
@@ -378,11 +383,7 @@
       .centres { grid-template-columns: 1fr; }
       .study-fig-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .study-fig-path { grid-template-columns: 1fr; }
-      .design-cards { grid-template-columns: 1fr; }
-      .design-cards .card,
-      .design-cards .card:nth-child(5),
-      .design-cards .card:nth-child(6),
-      .design-cards .card:nth-child(7) { grid-column: auto; }
+      .design-cards { columns: 1; }
     }
 </style>
 </head>
