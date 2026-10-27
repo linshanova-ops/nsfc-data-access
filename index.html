@@ -3,156 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>https://www.nsfc.project.dataaccess.org</title>
-  <meta name="description" content="Data access policy and proposal form for NSFC grant W2541022: urban-environmental stress patterns affecting mental illness.">
+  <title>NSFC W2541022 · Urban environmental stress and mental illness</title>
+  <meta name="description" content="NSFC grant W2541022: urban-environmental stress patterns affecting mental illness. Project overview, centres, publications, data access, and the iDianji application.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,650;1,8..60,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,650&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg0: #fdf6e3;
-      --bg-dim: #efebd4;
-      --bg1: #f4f0d9;
-      --bg2: #e6e2cc;
-      --bg3: #e0dcc7;
-      --bg-green: #f3f5d9;
-      --bg-aqua: #e7f0e4;
-      --bg-yellow: #faf3d8;
-      --fg: #4a585f;
-      --fg-strong: #3c4843;
-      --muted: #6d7b74;
-      --line: #d5d0b8;
-      --green: #6d8200;
-      --green-soft: #8da101;
-      --aqua: #2f8f6b;
-      --yellow: #9a7400;
-      --blue: #2f7eab;
-      --blue-deep: #24688f;
-      --bg-blue: #e7f2f7;
-      --orange: #c46512;
-      --red: #c44542;
-      --header-h: 64px;
+      --bg: #e7f4fb;
+      --bg-2: #f5fbfe;
+      --card: #ffffff;
+      --line: #c5e2f2;
+      --ink: #1c3d52;
+      --muted: #4e6d80;
+      --blue: #8ecae6;
+      --blue-deep: #5aa9cc;
+      --navy: #1b4f6b;
+      --link: #1d6f93;
+      --header-h: 76px;
       --content: 760px;
       --wide: 1080px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--bg0);
-      color: var(--fg);
+      background: var(--bg);
+      color: var(--ink);
       font-family: "Source Sans 3", "Avenir Next", "Segoe UI", sans-serif;
       font-size: 1.0625rem;
       line-height: 1.65;
     }
-
-    a { color: var(--aqua); text-underline-offset: 0.18em; }
-    a:hover { color: var(--green); }
-
-    .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0;
-      background: var(--green-soft);
-      z-index: 40;
-    }
-
+    a { color: var(--link); text-underline-offset: 0.18em; }
+    a:hover { color: var(--navy); }
     header {
       position: sticky;
       top: 0;
       z-index: 30;
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      height: var(--header-h);
-      padding: 0 1.5rem;
-      background: rgba(253, 246, 227, 0.94);
+      gap: 1rem;
+      min-height: var(--header-h);
+      padding: 0.7rem 1.25rem;
+      background: rgba(231, 244, 251, 0.94);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(10px);
     }
     .brand {
       display: flex;
       flex-direction: column;
-      line-height: 1.15;
+      line-height: 1.1;
       text-decoration: none;
-      color: var(--fg-strong);
-      min-width: 9.5rem;
+      color: var(--navy);
+      min-width: 8.5rem;
     }
     .brand strong {
       font-family: "Source Serif 4", Georgia, serif;
       font-weight: 650;
-      letter-spacing: 0.01em;
     }
     .brand span {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
     }
-    .jump {
+    .nav {
       display: flex;
-      gap: 0.35rem;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      justify-content: flex-end;
       flex: 1;
-      scrollbar-width: none;
     }
-    .jump::-webkit-scrollbar { display: none; }
-    .jump a {
-      flex: 0 0 auto;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.84rem;
-      padding: 0.3rem 0.55rem;
+    .nav button {
+      appearance: none;
+      border: 1.5px solid var(--blue-deep);
+      background: #fff;
+      color: var(--navy);
+      font: inherit;
+      font-size: 0.86rem;
+      font-weight: 650;
+      padding: 0.42rem 0.85rem;
       border-radius: 999px;
+      cursor: pointer;
     }
-    .jump a.active,
-    .jump a:hover {
-      color: var(--fg-strong);
-      background: var(--bg2);
-    }
-    .header-download {
-      flex: 0 0 auto;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      min-height: 2.7rem;
-      padding: 0.55rem 1.15rem;
-      border: 1.5px solid var(--blue);
+    .nav button:hover { background: #dff1fa; }
+    .nav button.active {
       background: var(--blue);
-      color: #fdf6e3;
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 2px;
+      border-color: var(--blue);
+      color: var(--navy);
     }
-    .btn:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fdf6e3; }
-    .btn.ghost {
-      background: transparent;
-      color: var(--blue);
-    }
-    .btn.ghost:hover { background: var(--bg-blue); color: var(--blue); }
-    .header-download .btn { min-height: 2.25rem; padding: 0.4rem 0.85rem; }
-
+    .view[hidden] { display: none; }
     .hero {
-      padding: 4.5rem 1.5rem 3.25rem;
+      padding: 4.2rem 1.5rem 3rem;
       text-align: center;
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(141, 161, 1, 0.16), transparent 58%),
-        var(--bg1);
+        radial-gradient(ellipse at 50% 0%, rgba(142, 202, 230, 0.55), transparent 60%),
+        var(--bg-2);
       border-bottom: 1px solid var(--line);
     }
     .kicker {
       margin: 0 0 0.8rem;
-      color: var(--green);
+      color: var(--link);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.16em;
@@ -160,47 +111,23 @@
     }
     h1 {
       margin: 0 auto 0.85rem;
-      max-width: 16ch;
+      max-width: 22ch;
       font-family: "Source Serif 4", Georgia, serif;
       font-weight: 600;
-      font-size: clamp(2.6rem, 6vw, 4.4rem);
-      line-height: 1.05;
-      color: var(--fg-strong);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.12;
+      color: var(--navy);
     }
-    .subtitle {
-      margin: 0 auto;
-      max-width: 42rem;
-      font-family: "Source Serif 4", Georgia, serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--fg);
-    }
-    .zh {
-      margin: 0.45rem auto 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .lead {
-      margin: 1.75rem auto 0;
-      max-width: var(--content);
-      text-align: left;
-    }
+    .subtitle, .zh { margin: 0.35rem auto 0; max-width: 40rem; }
+    .zh { color: var(--muted); }
+    .lead { margin: 1.5rem auto 0; max-width: var(--content); text-align: left; }
     .lead p { margin: 0 0 1rem; }
-    .downloads {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 1.75rem;
-    }
-
-    main { padding: 0 0 4rem; }
+    main { padding-bottom: 3rem; }
     section {
-      scroll-margin-top: calc(var(--header-h) + 1.25rem);
-      padding: 3.5rem 1.5rem;
+      padding: 3.2rem 1.5rem;
       border-bottom: 1px solid var(--line);
     }
-    section:nth-of-type(even) { background: var(--bg1); }
+    .view section:nth-of-type(even) { background: var(--bg-2); }
     .wrap { max-width: var(--wide); margin: 0 auto; }
     .prose { max-width: var(--content); }
     h2 {
@@ -209,11 +136,11 @@
       font-weight: 600;
       font-size: clamp(1.8rem, 3vw, 2.35rem);
       line-height: 1.2;
-      color: var(--fg-strong);
+      color: var(--navy);
     }
     .section-index {
       margin: 0 0 0.4rem;
-      color: var(--aqua);
+      color: var(--link);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.14em;
@@ -224,80 +151,78 @@
       font-family: "Source Serif 4", Georgia, serif;
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--fg-strong);
+      color: var(--navy);
     }
     p { margin: 0.75rem 0; }
-    ul, ol { margin: 0.6rem 0 0.6rem; padding-left: 1.2rem; }
+    ul, ol { margin: 0.6rem 0; padding-left: 1.2rem; }
     li { margin: 0.35rem 0; }
     .note {
       margin-top: 1rem;
       padding: 0.9rem 1rem;
-      background: var(--bg-yellow);
-      border-left: 3px solid var(--yellow);
+      background: #e5f4fb;
+      border-left: 3px solid var(--blue-deep);
     }
-
-    .facts {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.25rem 0 0;
-      background: var(--bg0);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.7rem;
+      padding: 0.55rem 1.15rem;
+      border: 1.5px solid var(--navy);
+      background: var(--navy);
+      color: #f4fbfe;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
     }
-    .facts th, .facts td {
+    .btn:hover { background: #16384c; color: #f4fbfe; }
+    .btn.ghost { background: transparent; color: var(--navy); }
+    .btn.ghost:hover { background: #dff1fa; color: var(--navy); }
+    .downloads { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .facts, table.holdings { width: 100%; border-collapse: collapse; margin-top: 1.1rem; background: var(--card); }
+    .facts th, .facts td, table.holdings th, table.holdings td {
       text-align: left;
       vertical-align: top;
-      padding: 0.7rem 0.9rem;
+      padding: 0.65rem 0.85rem;
       border-bottom: 1px solid var(--line);
     }
-    .facts th {
-      width: 13rem;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.92rem;
-    }
-
+    .facts th { width: 13rem; color: var(--muted); font-weight: 600; font-size: 0.92rem; }
     .table-scroll { overflow-x: auto; margin-top: 1rem; }
-    table.holdings {
-      width: 100%;
-      min-width: 720px;
-      border-collapse: collapse;
-      background: var(--bg0);
-      font-size: 0.95rem;
-    }
-    table.holdings th, table.holdings td {
-      padding: 0.55rem 0.75rem;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
+    table.holdings { min-width: 720px; font-size: 0.95rem; }
     table.holdings thead th {
-      background: var(--bg-dim);
-      color: var(--fg-strong);
+      background: #d9eef8;
+      color: var(--navy);
       font-size: 0.78rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     table.holdings td.num, table.holdings th.num { text-align: right; white-space: nowrap; }
-    table.holdings tr.group td {
-      background: var(--bg-green);
-      color: var(--fg-strong);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .cards {
+    table.holdings tr.group td { background: #cfe8f6; color: var(--navy); font-weight: 700; }
+    .cards, .centres {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 0.85rem;
       margin-top: 1.1rem;
     }
-    .card {
-      padding: 1rem 1.05rem 0.9rem;
-      background: var(--bg0);
+    .card, .centre {
+      padding: 1rem 1.05rem 0.95rem;
+      background: var(--card);
       border: 1px solid var(--line);
+      border-radius: 8px;
     }
-    .card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
-    .card p { margin: 0; font-size: 0.98rem; }
-
+    .card h3, .centre h3 { margin: 0.2rem 0 0.4rem; font-size: 1.15rem; }
+    .card p, .centre p { margin: 0.4rem 0 0; font-size: 0.98rem; }
+    .place {
+      margin: 0;
+      color: var(--link);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
     .checks {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -309,7 +234,7 @@
     .checks li {
       margin: 0;
       padding: 0.45rem 0.65rem;
-      background: var(--bg0);
+      background: var(--card);
       border: 1px solid var(--line);
     }
     .checks li::before {
@@ -318,97 +243,68 @@
       width: 0.42rem;
       height: 0.42rem;
       margin-right: 0.55rem;
-      background: var(--green-soft);
+      background: var(--blue-deep);
       vertical-align: 0.12rem;
     }
-
     .people { list-style: none; padding: 0; }
-    .people li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .people strong { color: var(--fg-strong); }
-
+    .people li { padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+    .people strong { color: var(--navy); }
     footer {
       padding: 1.5rem;
       color: var(--muted);
       font-size: 0.9rem;
       text-align: center;
     }
-
-    @media (max-width: 760px) {
-      header { padding: 0 0.8rem; gap: 0.6rem; }
-      .jump { display: none; }
-      .hero { padding: 2.8rem 1rem 2.2rem; }
-      section { padding: 2.4rem 1rem; }
+    @media (max-width: 860px) {
+      header { align-items: flex-start; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .hero { padding: 2.6rem 1rem 2rem; }
+      section { padding: 2.2rem 1rem; }
       .facts th { width: 8.5rem; }
     }
-  </style>
+</style>
 </head>
 <body>
-  <div class="progress" id="progress"></div>
   <header>
-    <a class="brand" href="#top">
+    <a class="brand" href="#home" data-page="home">
       <strong>NSFC W2541022</strong>
-      <span>Data access</span>
+      <span>Project</span>
     </a>
-    <nav class="jump" aria-label="Sections">
-      <a href="#policy">Policy</a>
-      <a href="#dataset">Dataset</a>
-      <a href="#demographics">Demographics</a>
-      <a href="#design">Study design</a>
-      <a href="#legal">Legal</a>
-      <a href="#liaison">Liaison</a>
-      <a href="#proposal">Proposal</a>
-      <a href="#review">Review</a>
-      <a href="#accounts">Accounts</a>
-      <a href="#provision">Provision</a>
-      <a href="#manuscripts">Manuscripts</a>
-      <a href="#obligations">Obligations</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav" aria-label="Project">
+      <button type="button" data-page="home">Home</button>
+      <button type="button" data-page="about">About</button>
+      <button type="button" data-page="centre">Centre</button>
+      <button type="button" data-page="publications">Publications</button>
+      <button type="button" data-page="data">NSFC Data</button>
+      <button type="button" data-page="idianji">iDianji</button>
     </nav>
-    <a class="btn header-download" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download form</a>
   </header>
-
-  <div class="hero" id="top">
-    <p class="kicker">National Natural Science Foundation of China</p>
-    <h1>Data Access Policy</h1>
-    <p class="subtitle">Identification and molecular characterisation of urban-environmental stress patterns affecting mental illness</p>
-    <p class="zh">识别城市环境压力模式对精神障碍的影响及其分子机制</p>
-    <div class="lead">
-      <p>Researchers who wish to use data from this project in a publication must submit a proposal. The proposal is circulated to the Principal Investigator and the backbone investigators named in the research plan, so that overlapping work can be identified before access is granted.</p>
-      <p>Agree a liaison investigator before you submit. One form corresponds to one manuscript. Send the completed form to <a href="mailto:gunter.schumann1961@gmail.com">gunter.schumann1961@gmail.com</a> and copy the liaison. Questions about host-institution authorisation may also be copied to <a href="mailto:nsfcfd@fudan.edu.cn">nsfcfd@fudan.edu.cn</a>.</p>
-    </div>
-    <div class="downloads">
-      <a class="btn" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download proposal form</a>
-      <a class="btn ghost" href="downloads/NSFC-W2541022-Data-Access-Policy.docx" download>Download data access policy</a>
-    </div>
-  </div>
-
   <main>
-    <section id="policy">
-      <div class="wrap">
-        <p class="section-index">Project</p>
-        <h2>The project this policy covers</h2>
-        <div class="prose">
-          <p>This page restates the NSFC W2541022 Data Access Policy and the items on the Data Access Proposal Form. Counts below are those in the policy prepared from the working dataset through 28 September 2026. Current counts are given by the data manager on request and are supplied with each approved extract.</p>
-        </div>
-        <table class="facts">
-          <tbody>
-            <tr><th>Funding body</th><td>National Natural Science Foundation of China (NSFC)</td></tr>
-            <tr><th>Programme</th><td>Science Fund for Global Challenges and Sustainability — International Collaboration Fund for Creative Research Teams</td></tr>
-            <tr><th>Grant number</th><td>W2541022</td></tr>
-            <tr><th>Principal Investigator</th><td>Professor Gunter Schumann</td></tr>
-            <tr><th>Host institution</th><td>Fudan University (Huashan Hospital and the Institute of Science and Technology of Brain-inspired Intelligence, ISTBI)</td></tr>
-            <tr><th>Grant period</th><td>1 January 2026 – 31 December 2028</td></tr>
-            <tr><th>Application code</th><td>H1011 &nbsp; New technologies and methods for mental disorders and psychological health</td></tr>
-            <tr><th>Form to use</th><td>NSFC W2541022 Data Access Proposal Form</td></tr>
-          </tbody>
-        </table>
+    <div class="view" id="home">
+    <section class="hero">
+      <p class="kicker">National Natural Science Foundation of China</p>
+      <h1>Urban environmental stress and mental illness</h1>
+      <p class="subtitle">Identification and molecular characterisation of urban-environmental stress patterns affecting mental illness</p>
+      <p class="zh">识别城市环境压力模式对精神障碍的影响及其分子机制</p>
+      <div class="lead">
+        <p>This project, grant W2541022, studies how patterns of urban and environmental stress relate to mental illness, and the molecular measures that travel with those patterns. It recruits adults in Shanghai and Beijing and follows each person through a clinical visit, four weeks of smartphone and wearable monitoring, and an end-of-study assessment.</p>
+        <p>Recruitment is under way. At the 28 September 2026 snapshot used in the data-access materials, 244 participants had been registered: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder.</p>
       </div>
+      <table class="facts">
+        <tbody>
+          <tr><th>Funding body</th><td>National Natural Science Foundation of China (NSFC)</td></tr>
+          <tr><th>Programme</th><td>Science Fund for Global Challenges and Sustainability — International Collaboration Fund for Creative Research Teams</td></tr>
+          <tr><th>Grant number</th><td>W2541022</td></tr>
+          <tr><th>Principal Investigator</th><td>Professor Gunter Schumann</td></tr>
+          <tr><th>Host institution</th><td>Fudan University (Huashan Hospital and the Institute of Science and Technology of Brain-inspired Intelligence, ISTBI)</td></tr>
+          <tr><th>Grant period</th><td>1 January 2026 – 31 December 2028</td></tr>
+          <tr><th>Application code</th><td>H1011 &nbsp; New technologies and methods for mental disorders and psychological health</td></tr>
+        </tbody>
+      </table>
     </section>
-
-    <section id="dataset">
+</div>
+    <div class="view" id="about" hidden>
+<section id="dataset">
       <div class="wrap">
         <p class="section-index">The dataset</p>
         <h2>The NSFC dataset</h2>
@@ -475,8 +371,8 @@
 
     <section id="demographics">
       <div class="wrap prose">
-        <p class="section-index">Variables</p>
-        <h2>Basic demographic variables</h2>
+        <p class="section-index">Demographics</p>
+        <h2>Demographics</h2>
         <p>Basic demographic variables are scattered across the registration record, the demographic and medical history form, the application account record and the follow-up assessments. They are not held in one table, and applicants should expect to assemble them from more than one source.</p>
         <h3>Age</h3>
         <p>Recorded as age in years at assessment in the demographic history form, and as year of birth in the registration record. Because the study has repeated assessments, age belongs to an assessment rather than to the participant: the same participant has an age at baseline and an age at each follow-up.</p>
@@ -493,8 +389,8 @@
 
     <section id="design">
       <div class="wrap">
-        <p class="section-index">Research plan</p>
-        <h2>Data collection as designed</h2>
+        <p class="section-index">Study design</p>
+        <h2>Study design</h2>
         <div class="prose">
           <p>The design below is the approved research plan. It is the target for the study as a whole and not a description of what has been collected so far. The counts in the sections above are the ones that apply to a request.</p>
           <p>The project will recruit 680 adults aged 18–50 years, with a balanced sex distribution, from outpatient services in Shanghai and Beijing. There are four groups of 170 participants: major depressive disorder, anxiety disorder, alcohol use disorder, and healthy controls. Diagnoses follow ICD-10 or DSM-5. Comorbidity is allowed. Recruitment centres are Huashan Hospital of Fudan University, Shanghai Mental Health Center, and Peking University Sixth Hospital. The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital.</p>
@@ -534,7 +430,71 @@
       </div>
     </section>
 
-    <section id="legal">
+        </div>
+    <div class="view" id="centre" hidden>
+    <section>
+      <div class="wrap">
+        <p class="section-index">Recruitment</p>
+        <h2>Three centres</h2>
+        <div class="prose">
+          <p>The project recruits from outpatient services in Shanghai and Beijing. The approved plan is 680 adults aged 18–50 years, in four groups of 170: major depressive disorder, anxiety disorder, alcohol use disorder, and healthy controls. Diagnoses follow ICD-10 or DSM-5. Comorbidity is allowed.</p>
+          <p>The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital. Counts below are the registration snapshot through 28 September 2026, not the final enrolment.</p>
+        </div>
+        <div class="centres">
+          <article class="centre">
+            <p class="place">Shanghai · host institution</p>
+            <h3>Huashan Hospital of Fudan University</h3>
+            <p>The host site, together with the Institute of Science and Technology of Brain-inspired Intelligence (ISTBI). Professor Gunter Schumann is the Principal Investigator.</p>
+            <p>88 participants were registered at this centre in the 28 September 2026 snapshot.</p>
+          </article>
+          <article class="centre">
+            <p class="place">Shanghai</p>
+            <h3>Shanghai Mental Health Center</h3>
+            <p>Professor Min Zhao leads recruitment and clinical characterisation. Associate Professor Hang Su leads ecological momentary assessment.</p>
+            <p>The research plan assigns 253 participants to this centre. 72 were registered in the 28 September 2026 snapshot.</p>
+          </article>
+          <article class="centre">
+            <p class="place">Beijing</p>
+            <h3>Peking University Sixth Hospital</h3>
+            <p>Professor Weihua Yue leads the multi-omics work at this centre. Recruitment is from outpatient services in Beijing.</p>
+            <p>The research plan assigns 253 participants to this centre. 84 were registered in the 28 September 2026 snapshot.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+</div>
+    <div class="view" id="publications" hidden>
+    <section>
+      <div class="wrap prose">
+        <p class="section-index">Outputs</p>
+        <h2>Publications</h2>
+        <p>Papers that use data from grant W2541022 will be listed on this page as they appear. None are posted here yet.</p>
+        <p>Every manuscript that uses these data must:</p>
+        <ul>
+          <li>Acknowledge support from the National Natural Science Foundation of China, grant W2541022.</li>
+          <li>Name the liaison investigator.</li>
+          <li>Include, either as authors or in a supplementary consortium list, the project members responsible for the data domains used. The Principal Investigator keeps the current list.</li>
+        </ul>
+        <p>Authorship follows scholarly contribution. Holding an account, acting as liaison, or taking part in access review does not by itself confer authorship.</p>
+      </div>
+    </section>
+</div>
+    <div class="view" id="data" hidden>
+
+    <section class="hero">
+      <p class="kicker">Grant W2541022</p>
+      <h1>NSFC data</h1>
+      <div class="lead">
+        <p>Researchers who wish to use data from this project in a publication must submit a proposal. The proposal is circulated to the Principal Investigator and the backbone investigators named in the research plan, so that overlapping work can be identified before access is granted.</p>
+        <p>Agree a liaison investigator before you submit. One form corresponds to one manuscript. Send the completed form to <a href="mailto:gunter.schumann1961@gmail.com">gunter.schumann1961@gmail.com</a> and copy the liaison. Questions about host-institution authorisation may also be copied to <a href="mailto:nsfcfd@fudan.edu.cn">nsfcfd@fudan.edu.cn</a>.</p>
+      </div>
+      <div class="downloads" style="justify-content:center;">
+        <a class="btn" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download proposal form</a>
+        <a class="btn ghost" href="downloads/NSFC-W2541022-Data-Access-Policy.docx" download>Download data access policy</a>
+      </div>
+    </section>
+
+<section id="legal">
       <div class="wrap">
         <p class="section-index">Governance</p>
         <h2>Legal and regulatory requirements</h2>
@@ -806,34 +766,51 @@
         </div>
       </div>
     </section>
+    </div>
+    <div class="view" id="idianji" hidden>
+    <section>
+      <div class="wrap">
+        <p class="section-index">Application</p>
+        <h2>iDianji</h2>
+        <div class="prose">
+          <p>iDianji is the project’s ecological momentary assessment and smartphone-sensing application. Each enrolled participant carries it for four weeks, alongside a Huawei Watch GT6.</p>
+          <p>The application delivers My Spots, My Route, and My Day. Participants rate emotional state, attribute heart-rate changes to emotion, activity, or an unknown cause, and report recent activity and social context. They can add free text and a sleep report. Prompts are self-initiated, triggered when heart rate departs from the participant’s baseline, or delivered as random control prompts.</p>
+          <p>The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use. It also delivers questionnaire instances, including the Perceived Stress Scale, and can request an audio recording. Free text is released for research only after identifying details have been removed, unless a proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
+          <p>In the working dataset through 28 September 2026, iDianji had delivered 67,143 questionnaire instances to 207 participants and received 8,863 submissions from 196 participants, with 295,838 item-level responses. Geocoded locations covered 149 participants. Device terminal records covered 205 participants.</p>
+          <p>Associate Professor Hang Su leads ecological momentary assessment. Professor Tianye Jia works on ecological momentary assessment and geospatial analysis. Professor Frauke Nees is named on the proposal form for iDianji and smartphone sensing.</p>
+        </div>
+        <div class="downloads">
+          <button class="btn" type="button" data-page="about">Dataset counts</button>
+          <button class="btn ghost" type="button" data-page="data">Request these data</button>
+        </div>
+      </div>
+    </section>
+</div>
   </main>
-
-  <footer>
-    NSFC grant W2541022 · Fudan University · Counts through 28 September 2026
-  </footer>
+  <footer>NSFC grant W2541022 · Fudan University · Counts through 28 September 2026</footer>
 
   <script>
-    const bar = document.getElementById("progress");
-    const links = [...document.querySelectorAll(".jump a")];
-    const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
-
-    function onScroll() {
-      const scrolled = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + "%";
-
-      const line = window.innerHeight * 0.45;
-      let current = sections[0];
-      for (const section of sections) {
-        if (section.getBoundingClientRect().top <= line) current = section;
-      }
-      links.forEach((link) => {
-        link.classList.toggle("active", current && link.getAttribute("href") === "#" + current.id);
+    const buttons = [...document.querySelectorAll("[data-page]")];
+    const views = [...document.querySelectorAll(".view")];
+    function show(id) {
+      const page = views.some((view) => view.id === id) ? id : "home";
+      views.forEach((view) => { view.hidden = view.id !== page; });
+      buttons.forEach((button) => {
+        const on = button.dataset.page === page;
+        button.classList.toggle("active", on);
+        if (button.matches(".nav button")) button.setAttribute("aria-current", on ? "page" : "false");
       });
+      if (location.hash !== "#" + page) history.replaceState(null, "", "#" + page);
+      window.scrollTo(0, 0);
     }
-
-    document.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-page]");
+      if (!button) return;
+      show(button.dataset.page);
+    });
+    window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+    show(location.hash.slice(1) || "home");
   </script>
+
 </body>
 </html>
