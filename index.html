@@ -255,12 +255,36 @@
       font-size: 0.9rem;
       text-align: center;
     }
+    .idianji-layout {
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 1.5rem 2.25rem;
+      align-items: start;
+    }
+    .idianji-layout .prose { max-width: none; }
+    .idianji-shot {
+      margin: 0.35rem 0 0;
+      position: sticky;
+      top: calc(var(--header-h) + 1rem);
+    }
+    .idianji-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(28, 61, 82, 0.14);
+    }
     @media (max-width: 860px) {
       header { align-items: flex-start; flex-direction: column; }
       .nav { justify-content: flex-start; }
       .hero { padding: 2.6rem 1rem 2rem; }
       section { padding: 2.2rem 1rem; }
       .facts th { width: 8.5rem; }
+      .idianji-layout { grid-template-columns: 1fr; }
+      .idianji-shot { position: static; max-width: 280px; }
     }
 </style>
 </head>
@@ -761,35 +785,40 @@
     </div>
     <div class="view" id="idianji" hidden>
     <section>
-      <div class="wrap">
-        <p class="section-index">Application</p>
-        <h2>iDianji</h2>
-        <div class="prose">
-          <p>iDianji is a StreetMind-derived mobile application. It is the project’s ecological momentary assessment and smartphone-sensing application. Each enrolled participant carries it for four weeks, alongside a Huawei Watch GT6.</p>
-          <p>It mainly delivers three modules.</p>
+      <div class="wrap idianji-layout">
+        <div>
+          <p class="section-index">Application</p>
+          <h2>iDianji</h2>
+          <div class="prose">
+            <p>iDianji is a StreetMind-derived mobile application. It is the project’s ecological momentary assessment and smartphone-sensing application. Each enrolled participant carries it for four weeks, alongside a Huawei Watch GT6.</p>
+            <p>It mainly delivers three modules.</p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3>My Spots</h3>
+              <p>Asks about a place the participant adds: what the place is, whether they are alone or with others, when they started going there, how long they spend there, how it feels, how they travel there, and a short account or photo.</p>
+            </article>
+            <article class="card">
+              <h3>My Route</h3>
+              <p>Asks about a usual journey: where it starts and ends, the transport, why they chose it, conditions along the way, how long it takes, and how connected they feel to other people and to nature on that route.</p>
+            </article>
+            <article class="card">
+              <h3>My Day</h3>
+              <p>Asks about the day as a whole: mood, sleep, activity, who they spent time with, time in green space and by water, noise, temperature and air, and substance use.</p>
+            </article>
+          </div>
+          <div class="prose">
+            <p>The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use. It also delivers questionnaire instances, including the Perceived Stress Scale, and can request an audio recording. Free text is released for research only after identifying details have been removed, unless a proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
+            <p>In the working dataset through 28 September 2026, iDianji had delivered 67,143 questionnaire instances to 207 participants and received 8,863 submissions from 196 participants, with 295,838 item-level responses. Geocoded locations covered 149 participants. Device terminal records covered 205 participants.</p>
+          </div>
+          <div class="downloads">
+            <button class="btn" type="button" data-page="about">Dataset counts</button>
+            <button class="btn ghost" type="button" data-page="data">Request these data</button>
+          </div>
         </div>
-        <div class="cards">
-          <article class="card">
-            <h3>My Spots</h3>
-            <p>Asks about a place the participant adds: what the place is, whether they are alone or with others, when they started going there, how long they spend there, how it feels, how they travel there, and a short account or photo.</p>
-          </article>
-          <article class="card">
-            <h3>My Route</h3>
-            <p>Asks about a usual journey: where it starts and ends, the transport, why they chose it, conditions along the way, how long it takes, and how connected they feel to other people and to nature on that route.</p>
-          </article>
-          <article class="card">
-            <h3>My Day</h3>
-            <p>Asks about the day as a whole: mood, sleep, activity, who they spent time with, time in green space and by water, noise, temperature and air, and substance use.</p>
-          </article>
-        </div>
-        <div class="prose">
-          <p>The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use. It also delivers questionnaire instances, including the Perceived Stress Scale, and can request an audio recording. Free text is released for research only after identifying details have been removed, unless a proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
-          <p>In the working dataset through 28 September 2026, iDianji had delivered 67,143 questionnaire instances to 207 participants and received 8,863 submissions from 196 participants, with 295,838 item-level responses. Geocoded locations covered 149 participants. Device terminal records covered 205 participants.</p>
-        </div>
-        <div class="downloads">
-          <button class="btn" type="button" data-page="about">Dataset counts</button>
-          <button class="btn ghost" type="button" data-page="data">Request these data</button>
-        </div>
+        <figure class="idianji-shot">
+          <img src="images/idianji-my-spots.jpg" width="530" height="1024" alt="iDianji new-questionnaire screen, open on My Spots, with My Route and My Day as the other tabs.">
+        </figure>
       </div>
     </section>
 </div>
