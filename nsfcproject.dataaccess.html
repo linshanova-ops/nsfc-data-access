@@ -215,6 +215,23 @@
     }
     .card h3, .centre h3 { margin: 0.2rem 0 0.4rem; font-size: 1.15rem; }
     .card p, .centre p { margin: 0.4rem 0 0; font-size: 0.98rem; }
+    .centres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .centre { display: flex; flex-direction: column; }
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 7.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .badge img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
     .place {
       margin: 0;
       color: var(--link);
@@ -285,6 +302,7 @@
       .facts th { width: 8.5rem; }
       .idianji-layout { grid-template-columns: 1fr; }
       .idianji-shot { position: static; max-width: 280px; }
+      .centres { grid-template-columns: 1fr; }
     }
 </style>
 </head>
@@ -466,18 +484,21 @@
         </div>
         <div class="centres">
           <article class="centre">
+            <div class="badge"><img src="images/huashan-hospital.png" width="324" height="336" alt="Huashan Hospital of Fudan University"></div>
             <p class="place">Shanghai · host institution</p>
             <h3>Huashan Hospital of Fudan University</h3>
             <p>The host site, together with the Institute of Science and Technology of Brain-inspired Intelligence (ISTBI). Professor Gunter Schumann is the Principal Investigator.</p>
             <p>88 participants were registered at this centre in the 28 September 2026 snapshot.</p>
           </article>
           <article class="centre">
+            <div class="badge"><img src="images/smhc.jpg" width="362" height="362" alt="Shanghai Mental Health Center"></div>
             <p class="place">Shanghai</p>
             <h3>Shanghai Mental Health Center</h3>
             <p>Professor Min Zhao leads recruitment and clinical characterisation. Associate Professor Hang Su leads ecological momentary assessment.</p>
             <p>The research plan assigns 253 participants to this centre. 72 were registered in the 28 September 2026 snapshot.</p>
           </article>
           <article class="centre">
+            <div class="badge"><img src="images/pku-sixth.jpg" width="260" height="237" alt="Peking University Sixth Hospital"></div>
             <p class="place">Beijing</p>
             <h3>Peking University Sixth Hospital</h3>
             <p>Professor Weihua Yue leads the multi-omics work at this centre. Recruitment is from outpatient services in Beijing.</p>
