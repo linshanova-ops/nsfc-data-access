@@ -338,15 +338,26 @@
     .people li { padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
     .people strong { color: var(--navy); }
     #publications section {
-      min-height: calc(100vh - var(--header-h) - 4.5rem);
+      display: flex;
+      justify-content: center;
       border-bottom: none;
+      padding: 3.2rem 1.5rem 2.6rem;
+      background: var(--bg);
+    }
+    #publications .wrap.prose {
+      width: min(440px, 100%);
+      max-width: 440px;
+      margin: 0;
+      padding: 0.45rem 1.15rem 0;
+      text-align: center;
+      aspect-ratio: 1;
       background-color: #e7f4fb;
       background-image:
         linear-gradient(180deg, rgba(245, 251, 254, 0.9), rgba(231, 244, 251, 0.82) 42%, rgba(245, 251, 254, 0.9)),
         url("images/publications-coming-soon.jpg");
+      background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      background-repeat: no-repeat;
     }
     footer {
       padding: 1.5rem;
