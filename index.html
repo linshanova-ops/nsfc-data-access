@@ -338,27 +338,9 @@
     .people li { padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
     .people strong { color: var(--navy); }
     #publications section {
+      min-height: calc(100vh - var(--header-h) - 4.6rem);
       border-bottom: none;
-      padding: 3.4rem 1.5rem 3rem;
-      background: var(--bg);
-    }
-    #publications .wrap.prose {
-      width: min(34rem, 100%);
-      margin: 0 auto;
-      text-align: center;
-    }
-    #publications .publications-wash {
-      width: min(380px, 100%);
-      aspect-ratio: 1;
-      margin: 1.35rem auto 0;
-      border-radius: 18px;
-      background-color: #e7f4fb;
-      background-image:
-        linear-gradient(180deg, rgba(245, 251, 254, 0.78), rgba(231, 244, 251, 0.62) 46%, rgba(245, 251, 254, 0.8)),
-        url("images/publications-coming-soon.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      background: #b7dff3;
     }
     footer {
       padding: 1.5rem;
@@ -828,7 +810,6 @@
         <p class="section-index">Outputs</p>
         <h2>Publications</h2>
         <p>Please stay tuned. Publications from this project are coming soon, and this page will list them as they appear.</p>
-        <div class="publications-wash" role="img" aria-label="Coming soon, stay tuned."></div>
       </div>
     </section>
 </div>
