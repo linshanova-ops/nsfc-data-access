@@ -241,25 +241,14 @@
     .btn.ghost { background: transparent; color: var(--navy); }
     .btn.ghost:hover { background: #dff1fa; color: var(--navy); }
     .downloads { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
-    .facts, table.holdings { width: 100%; border-collapse: collapse; margin-top: 1.1rem; background: var(--card); }
-    .facts th, .facts td, table.holdings th, table.holdings td {
+    .facts { width: 100%; border-collapse: collapse; margin-top: 1.1rem; background: var(--card); }
+    .facts th, .facts td {
       text-align: left;
       vertical-align: top;
       padding: 0.65rem 0.85rem;
       border-bottom: 1px solid var(--line);
     }
     .facts th { width: 13rem; color: var(--muted); font-weight: 600; font-size: 0.92rem; }
-    .table-scroll { overflow-x: auto; margin-top: 1rem; }
-    table.holdings { min-width: 720px; font-size: 0.95rem; }
-    table.holdings thead th {
-      background: #d9eef8;
-      color: var(--navy);
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    table.holdings td.num, table.holdings th.num { text-align: right; white-space: nowrap; }
-    table.holdings tr.group td { background: #cfe8f6; color: var(--navy); font-weight: 700; }
     .cards, .centres {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -531,6 +520,8 @@
     <nav class="nav" aria-label="Project">
       <button type="button" data-page="home">Home</button>
       <button type="button" data-page="about">About</button>
+      <button type="button" data-page="tools">Tools</button>
+      <button type="button" data-page="procedures">Procedures</button>
       <button type="button" data-page="centre">Centre</button>
       <button type="button" data-page="publications">Publications</button>
       <button type="button" data-page="data">NSFC Data</button>
@@ -545,8 +536,9 @@
       <p class="subtitle"><span>Identification and molecular characterisation of urban-environmental stress patterns affecting mental illness</span></p>
       <p class="zh">识别城市环境压力模式对精神障碍的影响及其分子机制</p>
       <div class="lead">
-        <p>This project, grant W2541022, studies how patterns of urban and environmental stress relate to mental illness, and the molecular measures that travel with those patterns. It recruits adults in Shanghai and Beijing and follows each person through a clinical visit, four weeks of smartphone and wearable monitoring, and an end-of-study assessment.</p>
-        <p>Recruitment is under way. At the 28 September 2026 snapshot used in the data-access materials, 244 participants had been registered: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder.</p>
+        <p>The aim is a fine-grained, real-time account of stressful events in urban life. The study records both the measured environment and the way each person experiences it, and follows how those exposures change across the day. From that record it seeks the environmental triggers of stress, the genetic and molecular paths that carry them, and their effects on behaviour, physiology, and mental illness.</p>
+        <p>Three objectives follow. The first measures real-time urban environmental stress with the StreetMind application and wearable sensors, in healthy adults and in people with stress-related mental disorders. The second relates those exposures to mental health in major depressive disorder, anxiety disorder, alcohol use disorder, and healthy controls, by linking daily reports to geospatial environmental data, and tests the findings in external cohorts. The third identifies biological mechanisms, through genetics, DNA methylation, gene expression, and proteomics, and joins those molecular profiles to the environmental stress patterns and to how the illness unfolds.</p>
+        <p>The host is Fudan University, through Huashan Hospital and the Institute of Science and Technology for Brain-inspired Intelligence. The clinical partners are Shanghai Mental Health Center and Peking University Sixth Hospital. Professor Frauke Nees (Ludwig-Maximilians-Universität Munich) and Professor Bin Chen (The University of Hong Kong) are the affiliated international experts. Kiel University takes part in the analysis of momentary-assessment, mobility, and physiological data. The project is carried out with the Horizon Europe consortium environMENTAL, which developed StreetMind and the environMAP hub. The environMAP spatial data infrastructure was built at the Berlin Institute of Health at Charité. The plan also provides for training exchanges with the partner organisations of environMENTAL and with existing collaborators at the Universities of Oxford and Cambridge.</p>
       </div>
       <div class="fact-grid">
         <article><span>Funding body</span><strong>National Natural Science Foundation of China</strong></article>
@@ -560,6 +552,15 @@
     </section>
 </div>
     <div class="view" id="about" hidden>
+    <section id="motives">
+      <div class="wrap prose">
+        <p class="section-index">Motives</p>
+        <h2>Why this study</h2>
+        <p>Environmental factors contribute more than 40% to depression, anxiety, and alcohol use disorder, and they are closely tied to relapse and to how the illness turns out. Urban life is one driver, but the everyday conditions that make up that life have not been characterised at the scale and speed at which they occur. A record that captures the complexity and the movement of urban living is still missing. The biological mediators of those conditions, and how far they change the course of illness, remain unclear. Leaving them out of account makes relapse harder to interrupt and recovery harder to sustain.</p>
+        <p>Much of the existing evidence comes from a general self-report, or from a questionnaire completed away from the exposure. Those methods miss the moment. They also miss the difference between what the environment is and what the person feels. Noise, air, crowding, a commute, and a place someone returns to can each change stress, and they do not do so in the same way, or at the same time, for every person. Digital tools used in daily life can hold the psychological report and the physiological response together, at the time they happen.</p>
+        <p>The study joins the parts shown in the study-design figure. StreetMind, delivered in this project as iDianji, records three modules across four weeks. My Spots logs places a person goes and how those places feel. My Route logs a usual journey, the conditions along it, and how connected the person feels. My Day logs the day as a whole: mood, sleep, activity, nutrition, company, time in green space and by water, noise, temperature and air, and substance use. Prompts are started by the participant, started when heart rate departs from that person’s baseline, or delivered as random checks. A Huawei Watch GT6, worn for the same four weeks, records heart rate, blood oxygen, a stress index, sleep, movement, and location. environMAP then links those locations to urbanicity and land cover, natural space, climate and weather, air pollution, and regional socioeconomic conditions. Blood and urine, taken once at the baseline visit, support genetics, DNA methylation, gene expression, and proteomics. The end visit repeats the clinical assessment. Held together, these components are meant to show how a distinct urban stress pattern is mediated biologically and how it relates to mental illness.</p>
+      </div>
+    </section>
 <section id="dataset">
       <div class="wrap">
         <div class="dataset-layout">
@@ -568,8 +569,6 @@
         <h2>The NSFC dataset</h2>
         <div class="prose">
           <p>The NSFC dataset is the data generated under grant W2541022. It joins four collection systems: the electronic data capture system (EDC), which holds registration, demographic and medical history, clinical follow-up, medication, adverse event, biosample and hair-sample records, and the login-code mapping; the iDianji application, which holds ecological momentary assessment and smartphone sensing; Huawei wearable devices carried through Huawei Health, which hold continuous physiology, sleep, physical activity and location; and the biosample and omics pipelines. Each system writes its own tables with its own participant key. The coordinating centre holds the mapping between keys and issues research extracts in which direct identifiers are replaced by an anonymous participant code.</p>
-          <p>Recruitment is under way and the dataset grows every week. At the time this version of the policy was prepared, 244 participants had been registered at the three centres between 25 February and 28 September 2026: 96 healthy controls, 68 with generalised anxiety disorder, 56 with major depressive disorder and 24 with alcohol use disorder. Of these, 142 had completed the study, 68 were in follow-up, 21 had left the study and 13 were still in screening. Registration by centre was Huashan Hospital of Fudan University 88, Peking University Sixth Hospital 84, and Shanghai Mental Health Center 72.</p>
-          <p>Coverage is uneven across streams. Not every participant contributes to every stream, and 1-minute wearable streams start later than the 10-minute streams. Applicants should request the counts for the variables they intend to use before they fix an analysis plan, because the number with complete data is smaller than the number registered.</p>
         </div>
         </div>
         <figure class="study-fig dataset-side" aria-label="Four collection systems. Each keeps its own participant key. The coordinating centre maps those keys and releases a research extract under an anonymous participant code.">
@@ -605,59 +604,6 @@
           </div>
         </figure>
         </div>
-        <div class="table-scroll">
-          <table class="holdings">
-            <thead>
-              <tr>
-                <th>Data stream</th>
-                <th class="num">Records</th>
-                <th class="num">Participants</th>
-                <th>Period covered</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="group"><td colspan="4">Electronic data capture (EDC)</td></tr>
-              <tr><td>Participant registration, group, centre and study status</td><td class="num">244</td><td class="num">244</td><td>25 Feb – 28 Sep 2026</td></tr>
-              <tr><td>Demographic and medical history</td><td class="num">225</td><td class="num">225</td><td>2026</td></tr>
-              <tr><td>Clinical follow-up assessments (MINI, HAMD-17, HAMA-14, BDI, PHQ-9, GAD-7, PSS-10, AUDIT)</td><td class="num">817</td><td class="num">227</td><td>Mar – Sep 2026</td></tr>
-              <tr><td>Medication records (drug, dose, route, frequency)</td><td class="num">330</td><td class="num">189</td><td>2026</td></tr>
-              <tr><td>Adverse events</td><td class="num">36</td><td class="num">31</td><td>2026</td></tr>
-              <tr><td>Biosample aliquots (plasma 2,716; urine 1,705; whole blood 1,363; RNA 685; white cells 684; red cells 341)</td><td class="num">7,494</td><td class="num">218</td><td>to 28 Sep 2026</td></tr>
-              <tr><td>Hair samples, with haircare and sun-exposure metadata</td><td class="num">86</td><td class="num">85</td><td>to 28 Sep 2026</td></tr>
-              <tr><td>Login-code mapping between participant code and app account</td><td class="num">239</td><td class="num">239</td><td>2026</td></tr>
-
-              <tr class="group"><td colspan="4">iDianji ecological momentary assessment and smartphone sensing</td></tr>
-              <tr><td>Questionnaire instances delivered (My Day, My Spots, My Route, PSS-10, audio recording)</td><td class="num">67,143</td><td class="num">207</td><td>Apr – Sep 2026</td></tr>
-              <tr><td>EMA submissions</td><td class="num">8,863</td><td class="num">196</td><td>Apr – Sep 2026</td></tr>
-              <tr><td>Item-level responses to EMA prompts</td><td class="num">295,838</td><td class="num">196</td><td>Apr – Sep 2026</td></tr>
-              <tr><td>Geocoded EMA locations (longitude, latitude, address, district)</td><td class="num">4,203</td><td class="num">149</td><td>12 Apr – 28 Sep 2026</td></tr>
-              <tr><td>Check-in (punch-card) records</td><td class="num">7,128</td><td class="num">195</td><td>May – Sep 2026</td></tr>
-              <tr><td>Device terminal records (location, activity state, accelerometer)</td><td class="num">634,663</td><td class="num">205</td><td>Apr – Sep 2026</td></tr>
-              <tr><td>Daily step counts recorded by the phone</td><td class="num">1,878</td><td class="num">97</td><td>Apr – Sep 2026</td></tr>
-              <tr><td>Prompt and reminder messages sent to participants</td><td class="num">121,209</td><td class="num">207</td><td>Apr – Sep 2026</td></tr>
-              <tr><td>Participant ranking records</td><td class="num">6,339</td><td class="num">207</td><td>2026</td></tr>
-              <tr><td>Application account profile (nickname, year of birth, self-reported age and sex)</td><td class="num">201</td><td class="num">201</td><td>2026</td></tr>
-              <tr><td>Login-code accounts</td><td class="num">239</td><td class="num">239</td><td>2026</td></tr>
-              <tr><td>Data dictionary: 15 questionnaires, 124 items, 301 options, 8 item categories, 21 logic rules (no participant data)</td><td class="num">469</td><td class="num">—</td><td>2026</td></tr>
-
-              <tr class="group"><td colspan="4">Wearable device (Huawei Watch GT6)</td></tr>
-              <tr><td>Heart rate, 1-minute buckets</td><td class="num">2,566,858</td><td class="num">194</td><td>May – Sep 2026</td></tr>
-              <tr><td>Heart rate, 10-minute buckets</td><td class="num">689,005</td><td class="num">208</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Steps, 1-minute buckets</td><td class="num">930,952</td><td class="num">202</td><td>May – Sep 2026</td></tr>
-              <tr><td>Steps, 10-minute buckets</td><td class="num">300,032</td><td class="num">214</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Distance, 1-minute buckets</td><td class="num">961,013</td><td class="num">202</td><td>May – Sep 2026</td></tr>
-              <tr><td>Distance, 10-minute buckets</td><td class="num">301,181</td><td class="num">214</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Energy expenditure, 1-minute buckets</td><td class="num">1,100,886</td><td class="num">202</td><td>May – Sep 2026</td></tr>
-              <tr><td>Energy expenditure, 10-minute buckets</td><td class="num">317,463</td><td class="num">214</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Blood oxygen saturation, 1-minute buckets</td><td class="num">164,828</td><td class="num">149</td><td>May – Sep 2026</td></tr>
-              <tr><td>Blood oxygen saturation, 10-minute buckets</td><td class="num">206,451</td><td class="num">160</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Stress index, hourly</td><td class="num">100,342</td><td class="num">207</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Sleep, nightly summary with sleep stages and fragmentation</td><td class="num">5,741</td><td class="num">200</td><td>Feb – Sep 2026</td></tr>
-              <tr><td>Device location, 10-minute buckets</td><td class="num">61,154</td><td class="num">202</td><td>Mar – Sep 2026</td></tr>
-              <tr><td>Physical activity sessions (type, duration, calories, VO2max)</td><td class="num">1,902</td><td class="num">148</td><td>Mar – Sep 2026</td></tr>
-            </tbody>
-          </table>
-        </div>
       </div>
     </section>
 
@@ -665,17 +611,8 @@
       <div class="wrap prose">
         <p class="section-index">Demographics</p>
         <h2>Demographics</h2>
-        <p>Basic demographic variables are scattered across the registration record, the demographic and medical history form, the application account record and the follow-up assessments. They are not held in one table, and applicants should expect to assemble them from more than one source.</p>
-        <h3>Age</h3>
-        <p>Recorded as age in years at assessment in the demographic history form, and as year of birth in the registration record. Because the study has repeated assessments, age belongs to an assessment rather than to the participant: the same participant has an age at baseline and an age at each follow-up.</p>
-        <h3>Sex</h3>
-        <p>Recorded in the registration record (Male/Female) and again in the application account record (M/F).</p>
-        <h3>Education, occupation and marital status</h3>
-        <p>Recorded in the demographic history form, together with handedness, height, weight, place of origin and the district of residence.</p>
-        <h3>Recruitment centre</h3>
-        <p>Recorded in the registration record as the centre that enrolled the participant, and repeated on the biosample records.</p>
-        <h3>Group</h3>
-        <p>Recorded at registration as healthy control, generalised anxiety disorder, major depressive disorder or alcohol use disorder. The clinical diagnosis recorded at assessment is also held in the demographic history form.</p>
+        <p>The approved plan recruits 680 adults aged 18–50 years, with a balanced sex distribution, from outpatient services in Shanghai and Beijing. Each person is described by age, sex, education, occupation, marital status, handedness, height, weight, place of origin, and district of residence, together with the centre that enrolled them.</p>
+        <p>Age is recorded in years at each assessment, and year of birth is recorded at registration. Because there is a baseline visit and an end visit, age belongs to an assessment: the same person has an age at the start and an age at the end. Sex is recorded as male or female. Group is recorded as major depressive disorder, anxiety disorder, alcohol use disorder, or healthy control. The clinical diagnosis at assessment is recorded as well.</p>
       </div>
     </section>
 
@@ -684,7 +621,7 @@
         <p class="section-index">Study design</p>
         <h2>Study design</h2>
         <div class="prose">
-          <p>The design below is the approved research plan. It is the target for the study as a whole and not a description of what has been collected so far. The counts in the sections above are the ones that apply to a request.</p>
+          <p>The design below is the approved research plan. It is the target for the study as a whole.</p>
           <p>The project will recruit 680 adults aged 18–50 years, with a balanced sex distribution, from outpatient services in Shanghai and Beijing. There are four groups of 170 participants: major depressive disorder, anxiety disorder, alcohol use disorder, and healthy controls. Diagnoses follow ICD-10 or DSM-5. Comorbidity is allowed. Recruitment centres are Huashan Hospital of Fudan University, Shanghai Mental Health Center, and Peking University Sixth Hospital. The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital.</p>
           <p>Each enrolled participant completes a baseline clinical visit, four weeks of smartphone and wearable monitoring, and an end-of-study assessment. Blood (24 mL, in EDTA, heparin, and Tempus tubes) and urine are collected once, at the start of the study. The released research dataset uses a unique anonymous code on every record. Names, contact details, and government identity numbers are not part of the dataset provided for analysis.</p>
           <p>This policy covers data generated by grant W2541022. It does not grant access to ZIB, IMAGEN, or STRATIFY. Each of those resources has its own application route and its own approvals. Approval of this form does not approve those datasets. The NSFC research plan names them only as external validation cohorts.</p>
@@ -801,6 +738,44 @@
             <p>The research plan assigns 253 participants to this centre. 84 were registered in the 28 September 2026 snapshot.</p>
           </article>
         </div>
+      </div>
+    </section>
+</div>
+    <div class="view" id="tools" hidden>
+    <section>
+      <div class="wrap prose">
+        <p class="section-index">Instruments</p>
+        <h2>Tools</h2>
+        <p>The study uses a small set of instruments, each aimed at a different part of the same four weeks. They are the tools named in the research plan.</p>
+        <h3>StreetMind, delivered as iDianji</h3>
+        <p>StreetMind was designed in the Horizon Europe project <a href="https://www.environmental-project.org">environMENTAL</a>, under the leadership of Professor Frauke Nees, to record frequently visited places, routes, and daily experience, with geo-tracked emotions, actions, and behaviour. This project delivers it as iDianji and extends it with wearable physiology and with environMAP. The three modules are My Spots, My Route, and My Day. Participants rate emotional state, say whether a change in heart rate came from emotion, activity, or an unknown cause, and answer questions on recent activity and social context. A free-text field records the account in the person’s own words. Prompts are self-initiated, triggered when heart rate departs from that person’s baseline, or delivered as random checks. The phone also records location, activity state, accelerometer readings, and foreground application use.</p>
+        <h3>Huawei Watch GT6</h3>
+        <p>Each participant wears a Huawei Watch GT6 for the four weeks, carried through Huawei Health. It records heart rate by photoplethysmography, blood oxygen saturation, a device stress index, nightly sleep with stages, steps, distance, energy expenditure, physical activity sessions, and device location. The watch supplies the continuous physiological record that the momentary questions sit against.</p>
+        <h3>environMAP</h3>
+        <p>environMAP is the geospatial data hub developed in environMENTAL, with the Department of Earth System Science at The University of Hong Kong. Its spatial data infrastructure was built at the Berlin Institute of Health at Charité. It holds curated layers for urbanicity and land cover, natural space, climate and weather, air pollution, and regional socioeconomic status, with a catalogue for choosing layers and a service for displaying them. Authorised staff link a participant’s locations and StreetMind responses to those layers. The hub is not a file the participant carries.</p>
+        <h3>Clinical and psychological instruments</h3>
+        <p>The Mini-International Neuropsychiatric Interview confirms major depressive disorder, anxiety disorder, or alcohol use disorder. Repeated scales are the Alcohol Use Disorders Identification Test, the Patient Health Questionnaire-9, and the Generalised Anxiety Disorder 7-item scale, each twice a week, with cue-induced craving on a visual analogue scale. The Trier Inventory for Chronic Stress is given at the beginning and at the end. One or two Perceived Stress Scale items are given daily, and the full scale twice a week. Surveys cover urbanicity, eco-anxiety, and mental resilience. Participants are also asked for feedback on the monitoring.</p>
+        <h3>Electronic data capture</h3>
+        <p>Clinical visits are recorded in an electronic case report form. The form holds registration, demographic and medical history, clinical follow-up, medication, adverse events, and the biosample and hair-sample records. Every record carries the participant’s anonymous code.</p>
+        <h3>Biosample assays</h3>
+        <p>Blood and urine are taken once, at the baseline visit. Twenty-four millilitres of blood are split across EDTA tubes for genotyping and storage, heparin tubes for plasma protein, and Tempus tubes for RNA. The planned assays are the Illumina Chinese Genotyping Array, Illumina EPIC DNA methylation at about 935,000 sites, Illumina NovaSeq RNA sequencing, and plasma proteomics by mass spectrometry or antibody-based assays.</p>
+      </div>
+    </section>
+</div>
+    <div class="view" id="procedures" hidden>
+    <section>
+      <div class="wrap prose">
+        <p class="section-index">How the study runs</p>
+        <h2>Procedures</h2>
+        <p>The study is a four-week, multi-centre protocol in outpatient services in Shanghai and Beijing. The centres are Huashan Hospital of Fudan University, Shanghai Mental Health Center, and Peking University Sixth Hospital. A coordination group of clinical trial coordinators from the sites oversees recruitment, clinical evaluation, and follow-up. Trained psychiatrists explain the study, including its possible benefits and risks. People who are interested are screened, and those who are eligible give written informed consent before enrolment. Each person receives one anonymous code, used on every record.</p>
+        <h3>Who can take part</h3>
+        <p>Patients meet ICD-10 or DSM-5 criteria for major depressive disorder, an anxiety disorder, or alcohol use disorder. Comorbidity is allowed. Age is 18–50 years, with a balanced sex distribution. Participants need ordinary cognitive ability and the ability to use an Android smartphone. They agree to wear the study watch, download the research application, and upload data. Anyone taking medication must have been on a stable dose of a selective serotonin reuptake inhibitor, in particular citalopram or escitalopram, for at least one week, with a steady-state concentration reached before enrolment. People with alcohol use disorder must have completed alcohol withdrawal, as judged by clinical criteria or by the treating clinician. Healthy controls are held to the same age, cognitive, device, medication, and consent rules, and to the same exclusions.</p>
+        <h3>Who is not enrolled</h3>
+        <p>The plan excludes current use of benzodiazepines or opiates; current brain-stimulation treatment, including transcranial magnetic stimulation or electroconvulsive therapy; a skin infection or a significant skin defect on the wrist or arm that would stop the watch sitting properly; use in the past 30 days of a medicine that strongly inhibits or induces CYP450, or a dose that has not yet reached steady state; and a serious physical illness, such as a brain tumour or brain injury, or a current pregnancy or breastfeeding, where that would interfere with the protocol.</p>
+        <h3>What each person does</h3>
+        <p>Screening uses the Mini-International Neuropsychiatric Interview to confirm the diagnostic group. After consent, the baseline visit records demographics, medical, surgical, family, and social history, allergies, and current and past medication with dose and duration. The Trier Inventory for Chronic Stress and the repeated psychological scales are given at this visit. Blood and urine are taken once, at the start. The participant then downloads iDianji and wears the Huawei Watch GT6 for four weeks. During those weeks the application asks about places, routes, and the day, on a schedule of self-initiated reports, reports triggered when heart rate leaves that person’s baseline, and random control prompts. At the end of the four weeks the clinical assessment is repeated, including the Trier Inventory for Chronic Stress.</p>
+        <h3>Blood and urine</h3>
+        <p>Each person gives 24 mL of blood, split into six tubes of 4 mL: two EDTA tubes for genotyping and for storage, two heparin tubes for plasma protein, and two Tempus tubes for RNA. Heparin blood is centrifuged within 30 minutes of collection, at 3,000 × g for 10 minutes at 4°C, and the plasma is taken from the supernatant. EDTA and Tempus tubes are stored at −80°C within two hours of collection. Urine is collected at the same visit. Samples are kept for genotyping, RNA sequencing, epigenome-wide methylation, and proteomics.</p>
       </div>
     </section>
 </div>
@@ -1107,7 +1082,7 @@
           <p class="section-index">Application</p>
           <h2>iDianji</h2>
           <div class="prose">
-            <p>iDianji is a StreetMind-derived mobile application. It is the project’s ecological momentary assessment and smartphone-sensing application. Each enrolled participant carries it for four weeks, alongside a Huawei Watch GT6.</p>
+            <p>iDianji is this project’s use of StreetMind. StreetMind was designed and developed in the Horizon Europe project <a href="https://www.environmental-project.org">environMENTAL</a>, in which Fudan University is a partner, under the leadership of Professor Frauke Nees. It records places a person visits often, the routes they travel, and the day as they experience it, including geo-tracked emotions, actions, and behaviour. The application is described at <a href="https://www.streetmind.eu">streetmind.eu</a>. A Chinese version, whose development was supported by the National Key R&D Program of the Ministry of Science and Technology of China (MOST 2023YFE0199700), is already in use. This project advances StreetMind by linking those reports to wearable physiology and to environmental data in environMAP. Each enrolled participant carries iDianji for four weeks, alongside a Huawei Watch GT6.</p>
             <p>It mainly delivers three modules.</p>
           </div>
           <div class="cards">
@@ -1126,11 +1101,9 @@
           </div>
           <div class="prose">
             <p>The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use. It also delivers questionnaire instances, including the Perceived Stress Scale, and can request an audio recording. Free text is released for research only after identifying details have been removed, unless a proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
-            <p>In the working dataset through 28 September 2026, iDianji had delivered 67,143 questionnaire instances to 207 participants and received 8,863 submissions from 196 participants, with 295,838 item-level responses. Geocoded locations covered 149 participants. Device terminal records covered 205 participants.</p>
           </div>
           <div class="downloads">
-            <button class="btn" type="button" data-page="about">Dataset counts</button>
-            <button class="btn ghost" type="button" data-page="data">Request these data</button>
+            <button class="btn" type="button" data-page="data">Request these data</button>
           </div>
         </div>
         <figure class="idianji-shot">
