@@ -275,7 +275,7 @@
     }
     .card h3, .centre h3 { margin: 0.2rem 0 0.4rem; font-size: 1.15rem; }
     .card p, .centre p { margin: 0.4rem 0 0; font-size: 0.98rem; }
-    .centres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .centres { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
     .centre { display: flex; flex-direction: column; }
     .badge {
       display: flex;
@@ -292,6 +292,34 @@
       height: auto;
       object-fit: contain;
     }
+    .units {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.85rem;
+    }
+    .unit {
+      padding: 0.7rem 0.75rem 0.8rem;
+      background: var(--bg-2);
+      border-radius: 8px;
+    }
+    .unit img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: 3.6rem;
+      object-fit: contain;
+      object-position: left center;
+      margin: 0 0 0.45rem;
+    }
+    .unit h4 {
+      margin: 0 0 0.25rem;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--navy);
+    }
+    .unit p { margin: 0; }
     .place {
       margin: 0;
       color: var(--link);
@@ -524,7 +552,7 @@
       <button type="button" data-page="procedures">Procedures</button>
       <button type="button" data-page="centre">Centre</button>
       <button type="button" data-page="publications">Publications</button>
-      <button type="button" data-page="data">NSFC Data</button>
+      <button type="button" data-page="data">Data Access</button>
       <button type="button" data-page="idianji">iDianji</button>
     </nav>
   </header>
@@ -713,29 +741,40 @@
         <h2>Three centres</h2>
         <div class="prose">
           <p>The project recruits from outpatient services in Shanghai and Beijing. The approved plan is 680 adults aged 18–50 years, in four groups of 170: major depressive disorder, anxiety disorder, alcohol use disorder, and healthy controls. Diagnoses follow ICD-10 or DSM-5. Comorbidity is allowed.</p>
-          <p>The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital. Counts below are the registration snapshot through 28 September 2026, not the final enrolment.</p>
+          <p>The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital.</p>
         </div>
         <div class="centres">
           <article class="centre">
             <div class="badge"><img src="images/huashan-hospital.png" width="324" height="336" alt="Huashan Hospital of Fudan University"></div>
             <p class="place">Shanghai · host institution</p>
             <h3>Huashan Hospital of Fudan University</h3>
-            <p>The host site, together with the Institute of Science and Technology of Brain-inspired Intelligence (ISTBI). Professor Gunter Schumann is the Principal Investigator.</p>
-            <p>88 participants were registered at this centre in the 28 September 2026 snapshot.</p>
+            <p>The host clinical site. Professor Gunter Schumann is the Principal Investigator. Recruitment is from the psychiatry outpatient services, where major depressive disorder and anxiety disorder make up most of the caseload. Attending physician Yanqun Zheng co-leads recruitment and clinical characterisation.</p>
+            <div class="units">
+              <div class="unit">
+                <img src="images/pons.jpg" width="236" height="214" alt="PONS, Population Neuroscience and Stratified Medicine">
+                <h4>Centre for Population Neuroscience and Stratified Medicine</h4>
+                <p>PONS is within Huashan Hospital. Professor Gunter Schumann directs it, and the grant names it as his centre for this project.</p>
+              </div>
+              <div class="unit">
+                <img src="images/istbi.jpg" width="300" height="159" alt="ISTBI, Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University">
+                <h4>Institute of Science and Technology for Brain-Inspired Intelligence</h4>
+                <p>ISTBI is within Huashan Hospital for this project. The plan names it as the data-science institute on the Fudan team. Associate Professor Xiao Chang leads neuroimaging genetics there and co-leads the multi-omics work.</p>
+              </div>
+            </div>
           </article>
           <article class="centre">
             <div class="badge"><img src="images/smhc.jpg" width="362" height="362" alt="Shanghai Mental Health Center"></div>
             <p class="place">Shanghai</p>
             <h3>Shanghai Mental Health Center</h3>
-            <p>Professor Min Zhao leads recruitment and clinical characterisation. Associate Professor Hang Su leads ecological momentary assessment.</p>
-            <p>The research plan assigns 253 participants to this centre. 72 were registered in the 28 September 2026 snapshot.</p>
+            <p>A recruitment centre. Professor Min Zhao co-leads recruitment and clinical characterisation. Associate Professor Hang Su co-leads ecological momentary assessment and geospatial analysis. The centre treats anxiety and depression and runs an addiction clinic, from which participants with alcohol use disorder are recruited.</p>
+            <p>The research plan assigns 253 participants to this centre.</p>
           </article>
           <article class="centre">
             <div class="badge"><img src="images/pku-sixth.jpg" width="260" height="237" alt="Peking University Sixth Hospital"></div>
             <p class="place">Beijing</p>
             <h3>Peking University Sixth Hospital</h3>
-            <p>Professor Weihua Yue leads the multi-omics work at this centre. Recruitment is from outpatient services in Beijing.</p>
-            <p>The research plan assigns 253 participants to this centre. 84 were registered in the 28 September 2026 snapshot.</p>
+            <p>A recruitment centre. Professor Weihua Yue leads the multi-omics work. Professor Tianye Jia co-leads ecological momentary assessment and geospatial analysis. Recruitment is from outpatient services in Beijing, covering depression, anxiety, and alcohol use disorder.</p>
+            <p>The research plan assigns 253 participants to this centre.</p>
           </article>
         </div>
       </div>
@@ -748,7 +787,7 @@
         <h2>Tools</h2>
         <p>The study uses a small set of instruments, each aimed at a different part of the same four weeks. They are the tools named in the research plan.</p>
         <h3>StreetMind, delivered as iDianji</h3>
-        <p>StreetMind was designed in the Horizon Europe project <a href="https://www.environmental-project.org">environMENTAL</a>, under the leadership of Professor Frauke Nees, to record frequently visited places, routes, and daily experience, with geo-tracked emotions, actions, and behaviour. This project delivers it as iDianji and extends it with wearable physiology and with environMAP. The three modules are My Spots, My Route, and My Day. Participants rate emotional state, say whether a change in heart rate came from emotion, activity, or an unknown cause, and answer questions on recent activity and social context. A free-text field records the account in the person’s own words. Prompts are self-initiated, triggered when heart rate departs from that person’s baseline, or delivered as random checks. The phone also records location, activity state, accelerometer readings, and foreground application use.</p>
+        <p>StreetMind was designed in the Horizon Europe project <a href="https://www.environmental-project.org">environMENTAL</a>, under the leadership of Professor Gunter Schumann, to record frequently visited places, routes, and daily experience, with geo-tracked emotions, actions, and behaviour. This project delivers it as iDianji and extends it with wearable physiology and with environMAP. The three modules are My Spots, My Route, and My Day. Participants rate emotional state, say whether a change in heart rate came from emotion, activity, or an unknown cause, and answer questions on recent activity and social context. A free-text field records the account in the person’s own words. Prompts are self-initiated, triggered when heart rate departs from that person’s baseline, or delivered as random checks. The phone also records location, activity state, accelerometer readings, and foreground application use.</p>
         <h3>Huawei Watch GT6</h3>
         <p>Each participant wears a Huawei Watch GT6 for the four weeks, carried through Huawei Health. It records heart rate by photoplethysmography, blood oxygen saturation, a device stress index, nightly sleep with stages, steps, distance, energy expenditure, physical activity sessions, and device location. The watch supplies the continuous physiological record that the momentary questions sit against.</p>
         <h3>environMAP</h3>
@@ -792,10 +831,11 @@
 
     <section class="hero">
       <p class="kicker">Grant W2541022</p>
-      <h1>NSFC Data Access</h1>
+      <h1>Data Access</h1>
       <div class="lead">
         <p>Researchers who wish to use data from this project in a publication must submit a proposal. The proposal is circulated to the Principal Investigator and the backbone investigators named in the research plan, so that overlapping work can be identified before access is granted.</p>
         <p>Agree a liaison investigator before you submit. One form corresponds to one manuscript. Send the completed form to <a href="mailto:gunter.schumann1961@gmail.com">gunter.schumann1961@gmail.com</a> and copy the liaison. Questions about host-institution authorisation may also be copied to <a href="mailto:nsfcfd@fudan.edu.cn">nsfcfd@fudan.edu.cn</a>.</p>
+        <p>The relevant policies are checked with the legal department of the host institution and need to be signed off before an extract is released.</p>
       </div>
       <div class="downloads" style="justify-content:center;">
         <a class="btn" href="downloads/NSFC-W2541022-Data-Access-Proposal-Form.docx" download>Download proposal form</a>
@@ -1082,25 +1122,25 @@
           <p class="section-index">Application</p>
           <h2>iDianji</h2>
           <div class="prose">
-            <p>iDianji is this project’s use of StreetMind. StreetMind was designed and developed in the Horizon Europe project <a href="https://www.environmental-project.org">environMENTAL</a>, in which Fudan University is a partner, under the leadership of Professor Frauke Nees. It records places a person visits often, the routes they travel, and the day as they experience it, including geo-tracked emotions, actions, and behaviour. The application is described at <a href="https://www.streetmind.eu">streetmind.eu</a>. A Chinese version, whose development was supported by the National Key R&D Program of the Ministry of Science and Technology of China (MOST 2023YFE0199700), is already in use. This project advances StreetMind by linking those reports to wearable physiology and to environmental data in environMAP. Each enrolled participant carries iDianji for four weeks, alongside a Huawei Watch GT6.</p>
-            <p>It mainly delivers three modules.</p>
+            <p>iDianji is this project’s use of StreetMind. StreetMind was designed and developed in the Horizon Europe project <a href="https://www.environmental-project.org">environMENTAL</a>, in which Fudan University is a partner, under the leadership of Professor Gunter Schumann. It records places a person visits often, the routes they travel, and the day as they experience it, including geo-tracked emotions, actions, and behaviour. The application is described at <a href="https://www.streetmind.eu">streetmind.eu</a>. A Chinese version, whose development was supported by the National Key R&D Program of the Ministry of Science and Technology of China (MOST 2023YFE0199700), is already in use. This project advances StreetMind by linking those reports to wearable physiology and to environmental data in environMAP. Each enrolled participant carries iDianji for four weeks, alongside a Huawei Watch GT6.</p>
+            <p>It mainly delivers three modules, on the schedule in the research plan’s data-collection section.</p>
           </div>
           <div class="cards">
             <article class="card">
-              <h3>My Spots</h3>
-              <p>Asks about a place the participant adds: what the place is, whether they are alone or with others, when they started going there, how long they spend there, how it feels, how they travel there, and a short account or photo.</p>
+              <h3>My Spots · weekly</h3>
+              <p>Once a week, asks about a place the participant adds: what the place is, whether they are alone or with others, when they started going there, how long they spend there, how it feels, how they travel there, and a short account or photo.</p>
             </article>
             <article class="card">
-              <h3>My Route</h3>
-              <p>Asks about a usual journey: where it starts and ends, the transport, why they chose it, conditions along the way, how long it takes, and how connected they feel to other people and to nature on that route.</p>
+              <h3>My Route · weekly</h3>
+              <p>Once a week, asks about a usual journey: where it starts and ends, the transport, why they chose it, conditions along the way, how long it takes, and how connected they feel to other people and to nature on that route.</p>
             </article>
             <article class="card">
-              <h3>My Day</h3>
-              <p>Asks about the day as a whole: mood, sleep, activity, nutrition, who they spent time with, time in green space and by water, noise, temperature and air, and substance use.</p>
+              <h3>My Day · daily</h3>
+              <p>Each day, asks about the day as a whole: mood, sleep, activity, nutrition, who they spent time with, time in green space and by water, noise, temperature and air, and substance use.</p>
             </article>
           </div>
           <div class="prose">
-            <p>The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use. It also delivers questionnaire instances, including the Perceived Stress Scale, and can request an audio recording. Free text is released for research only after identifying details have been removed, unless a proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
+            <p>The same application records smartphone sensing: location, activity state, accelerometer readings, and foreground application use. The Perceived Stress Scale is collected here as well: one or two items each day, and the full scale twice a week, together with AUDIT, PHQ-9, and GAD-7. An audio recording is requested once a week. Free text is released for research only after identifying details have been removed, unless a proposal gives a reason to receive the unedited text and the access-review group agrees.</p>
           </div>
           <div class="downloads">
             <button class="btn" type="button" data-page="data">Request these data</button>
