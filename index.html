@@ -285,12 +285,17 @@
     .centre-row {
       display: grid;
       gap: 0.85rem;
-      align-items: start;
+      align-items: stretch;
     }
     .centre-row.host { width: min(100%, 34rem); grid-template-columns: 1fr; }
     .centre-row.subs { width: min(100%, 48rem); grid-template-columns: 1fr 1fr; }
     .centre-row.sites { width: min(100%, 64rem); grid-template-columns: 1fr 1fr; }
-    .centre { display: flex; flex-direction: column; }
+    .centres .centre {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+    }
     .badge {
       display: flex;
       align-items: center;
@@ -760,14 +765,12 @@
               <p class="place">Shanghai</p>
               <h3>Shanghai Mental Health Center</h3>
               <p>A recruitment centre. Professor Min Zhao co-leads recruitment and clinical characterisation. Associate Professor Hang Su co-leads ecological momentary assessment and geospatial analysis. The centre treats anxiety and depression and runs an addiction clinic, from which participants with alcohol use disorder are recruited.</p>
-              <p>The research plan assigns 253 participants to this centre.</p>
             </article>
             <article class="centre">
               <div class="badge"><img src="images/pku-sixth.jpg" width="260" height="237" alt="Peking University Sixth Hospital"></div>
               <p class="place">Beijing</p>
               <h3>Peking University Sixth Hospital</h3>
               <p>A recruitment centre. Professor Weihua Yue leads the multi-omics work. Professor Tianye Jia co-leads ecological momentary assessment and geospatial analysis. Recruitment is from outpatient services in Beijing, covering depression, anxiety, and alcohol use disorder.</p>
-              <p>The research plan assigns 253 participants to this centre.</p>
             </article>
           </div>
         </div>
