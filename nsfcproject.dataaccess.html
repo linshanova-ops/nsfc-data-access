@@ -249,7 +249,7 @@
       border-bottom: 1px solid var(--line);
     }
     .facts th { width: 13rem; color: var(--muted); font-weight: 600; font-size: 0.92rem; }
-    .cards, .centres {
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 0.85rem;
@@ -275,7 +275,21 @@
     }
     .card h3, .centre h3 { margin: 0.2rem 0 0.4rem; font-size: 1.15rem; }
     .card p, .centre p { margin: 0.4rem 0 0; font-size: 0.98rem; }
-    .centres { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+    .centres {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+      margin-top: 1.1rem;
+    }
+    .centre-row {
+      display: grid;
+      gap: 0.85rem;
+      align-items: start;
+    }
+    .centre-row.host { width: min(100%, 34rem); grid-template-columns: 1fr; }
+    .centre-row.subs { width: min(100%, 48rem); grid-template-columns: 1fr 1fr; }
+    .centre-row.sites { width: min(100%, 64rem); grid-template-columns: 1fr 1fr; }
     .centre { display: flex; flex-direction: column; }
     .badge {
       display: flex;
@@ -292,34 +306,6 @@
       height: auto;
       object-fit: contain;
     }
-    .units {
-      display: grid;
-      gap: 0.7rem;
-      margin-top: 0.85rem;
-    }
-    .unit {
-      padding: 0.7rem 0.75rem 0.8rem;
-      background: var(--bg-2);
-      border-radius: 8px;
-    }
-    .unit img {
-      display: block;
-      width: auto;
-      max-width: 100%;
-      height: 3.6rem;
-      object-fit: contain;
-      object-position: left center;
-      margin: 0 0 0.45rem;
-    }
-    .unit h4 {
-      margin: 0 0 0.25rem;
-      font-family: "Source Serif 4", Georgia, serif;
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.3;
-      color: var(--navy);
-    }
-    .unit p { margin: 0; }
     .place {
       margin: 0;
       color: var(--link);
@@ -528,7 +514,9 @@
       #home .fact-grid { grid-template-columns: 1fr; }
       .idianji-layout { grid-template-columns: 1fr; }
       .idianji-shot { position: static; max-width: 280px; }
-      .centres { grid-template-columns: 1fr; }
+      .centre-row.host,
+      .centre-row.subs,
+      .centre-row.sites { width: 100%; grid-template-columns: 1fr; }
       .study-fig-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .study-fig-path { grid-template-columns: 1fr; }
       .dataset-join { grid-template-columns: 1fr; }
@@ -744,38 +732,44 @@
           <p>The research plan assigns recruitment of 253 participants to each of Shanghai Mental Health Center and Peking University Sixth Hospital.</p>
         </div>
         <div class="centres">
-          <article class="centre">
-            <div class="badge"><img src="images/huashan-hospital.png" width="324" height="336" alt="Huashan Hospital of Fudan University"></div>
-            <p class="place">Shanghai · host institution</p>
-            <h3>Huashan Hospital of Fudan University</h3>
-            <p>The host clinical site. Professor Gunter Schumann is the Principal Investigator. Recruitment is from the psychiatry outpatient services, where major depressive disorder and anxiety disorder make up most of the caseload. Attending physician Yanqun Zheng co-leads recruitment and clinical characterisation.</p>
-            <div class="units">
-              <div class="unit">
-                <img src="images/pons.jpg" width="236" height="214" alt="PONS, Population Neuroscience and Stratified Medicine">
-                <h4>Centre for Population Neuroscience and Stratified Medicine</h4>
-                <p>PONS is within Huashan Hospital. Professor Gunter Schumann directs it, and the grant names it as his centre for this project.</p>
-              </div>
-              <div class="unit">
-                <img src="images/istbi.jpg" width="300" height="159" alt="ISTBI, Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University">
-                <h4>Institute of Science and Technology for Brain-Inspired Intelligence</h4>
-                <p>ISTBI is within Huashan Hospital for this project. The plan names it as the data-science institute on the Fudan team. Associate Professor Xiao Chang leads neuroimaging genetics there and co-leads the multi-omics work.</p>
-              </div>
-            </div>
-          </article>
-          <article class="centre">
-            <div class="badge"><img src="images/smhc.jpg" width="362" height="362" alt="Shanghai Mental Health Center"></div>
-            <p class="place">Shanghai</p>
-            <h3>Shanghai Mental Health Center</h3>
-            <p>A recruitment centre. Professor Min Zhao co-leads recruitment and clinical characterisation. Associate Professor Hang Su co-leads ecological momentary assessment and geospatial analysis. The centre treats anxiety and depression and runs an addiction clinic, from which participants with alcohol use disorder are recruited.</p>
-            <p>The research plan assigns 253 participants to this centre.</p>
-          </article>
-          <article class="centre">
-            <div class="badge"><img src="images/pku-sixth.jpg" width="260" height="237" alt="Peking University Sixth Hospital"></div>
-            <p class="place">Beijing</p>
-            <h3>Peking University Sixth Hospital</h3>
-            <p>A recruitment centre. Professor Weihua Yue leads the multi-omics work. Professor Tianye Jia co-leads ecological momentary assessment and geospatial analysis. Recruitment is from outpatient services in Beijing, covering depression, anxiety, and alcohol use disorder.</p>
-            <p>The research plan assigns 253 participants to this centre.</p>
-          </article>
+          <div class="centre-row host">
+            <article class="centre">
+              <div class="badge"><img src="images/huashan-hospital.png" width="324" height="336" alt="Huashan Hospital of Fudan University"></div>
+              <p class="place">Shanghai · host institution</p>
+              <h3>Huashan Hospital of Fudan University</h3>
+              <p>The host clinical site. Professor Gunter Schumann is the Principal Investigator. Recruitment is from the psychiatry outpatient services, where major depressive disorder and anxiety disorder make up most of the caseload. Attending physician Yanqun Zheng co-leads recruitment and clinical characterisation.</p>
+            </article>
+          </div>
+          <div class="centre-row subs">
+            <article class="centre">
+              <div class="badge"><img src="images/pons.jpg" width="236" height="214" alt="PONS, Population Neuroscience and Stratified Medicine"></div>
+              <p class="place">Within Huashan Hospital</p>
+              <h3>Centre for Population Neuroscience and Stratified Medicine</h3>
+              <p>Professor Gunter Schumann directs PONS, and the grant names it as his centre for this project.</p>
+            </article>
+            <article class="centre">
+              <div class="badge"><img src="images/istbi.jpg" width="300" height="159" alt="ISTBI, Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University"></div>
+              <p class="place">Within Huashan Hospital</p>
+              <h3>Institute of Science and Technology for Brain-Inspired Intelligence</h3>
+              <p>The plan names ISTBI as the data-science institute on the Fudan team. Associate Professor Xiao Chang leads neuroimaging genetics there and co-leads the multi-omics work.</p>
+            </article>
+          </div>
+          <div class="centre-row sites">
+            <article class="centre">
+              <div class="badge"><img src="images/smhc.jpg" width="362" height="362" alt="Shanghai Mental Health Center"></div>
+              <p class="place">Shanghai</p>
+              <h3>Shanghai Mental Health Center</h3>
+              <p>A recruitment centre. Professor Min Zhao co-leads recruitment and clinical characterisation. Associate Professor Hang Su co-leads ecological momentary assessment and geospatial analysis. The centre treats anxiety and depression and runs an addiction clinic, from which participants with alcohol use disorder are recruited.</p>
+              <p>The research plan assigns 253 participants to this centre.</p>
+            </article>
+            <article class="centre">
+              <div class="badge"><img src="images/pku-sixth.jpg" width="260" height="237" alt="Peking University Sixth Hospital"></div>
+              <p class="place">Beijing</p>
+              <h3>Peking University Sixth Hospital</h3>
+              <p>A recruitment centre. Professor Weihua Yue leads the multi-omics work. Professor Tianye Jia co-leads ecological momentary assessment and geospatial analysis. Recruitment is from outpatient services in Beijing, covering depression, anxiety, and alcohol use disorder.</p>
+              <p>The research plan assigns 253 participants to this centre.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
