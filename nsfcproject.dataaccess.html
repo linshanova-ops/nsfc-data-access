@@ -279,21 +279,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.85rem;
+      gap: 1rem;
       margin-top: 1.1rem;
     }
-    .host-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      width: calc((min(100%, 52.85rem) - 0.85rem) / 2);
+    .centre-row.apex {
+      display: grid;
+      grid-template-columns: minmax(9.5rem, 12.5rem) minmax(16rem, 22rem) minmax(9.5rem, 12.5rem);
+      gap: 0.75rem;
+      align-items: center;
+      width: min(100%, 48rem);
     }
     .centre-row.sites {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.85rem;
       align-items: stretch;
-      width: min(100%, 52.85rem);
+      width: min(100%, 64rem);
     }
     .centres .centre {
       display: flex;
@@ -301,45 +302,15 @@
       height: 100%;
       text-align: center;
     }
-    .within {
-      position: relative;
-      padding: 0.7rem 0.55rem 0.55rem;
-      background: #f3f9fc;
-      border: 1px dashed var(--blue-deep);
-      border-radius: 8px;
-    }
-    .within::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: -0.95rem;
-      width: 2px;
-      height: 0.95rem;
-      background: var(--blue-deep);
-      transform: translateX(-50%);
-    }
-    .within-label {
-      margin: 0 0 0.45rem;
-      color: var(--link);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-align: center;
-      text-transform: uppercase;
-    }
-    .units {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.45rem;
-      align-items: stretch;
-    }
     .unit {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      padding: 0.45rem 0.4rem 0.5rem;
-      background: var(--card);
-      border: 1px solid var(--line);
+      height: auto;
+      min-height: 15.5rem;
+      justify-content: flex-start;
+      padding: 0.55rem 0.5rem 0.6rem;
+      background: #f3f9fc;
+      border: 1px dashed var(--blue-deep);
       border-radius: 6px;
       text-align: center;
     }
@@ -576,8 +547,15 @@
       #home .fact-grid { grid-template-columns: 1fr; }
       .idianji-layout { grid-template-columns: 1fr; }
       .idianji-shot { position: static; max-width: 280px; }
-      .host-stack,
+      .centre-row.apex,
       .centre-row.sites { width: 100%; }
+      .centre-row.apex {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "host host" "pons istbi";
+      }
+      .centre.host { grid-area: host; }
+      .unit.pons { grid-area: pons; }
+      .unit.istbi { grid-area: istbi; }
       .centre-row.sites { grid-template-columns: 1fr; }
       .study-fig-people { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .study-fig-path { grid-template-columns: 1fr; }
@@ -794,28 +772,25 @@
           <p>Shanghai Mental Health Center and Peking University Sixth Hospital each recruit 253 participants.</p>
         </div>
         <div class="centres">
-          <div class="host-stack">
-          <article class="centre host">
-            <div class="badge"><img src="images/huashan-hospital.png" width="324" height="336" alt="Huashan Hospital of Fudan University"></div>
-            <p class="place">Shanghai · host institution</p>
-            <h3>Huashan Hospital of Fudan University</h3>
-            <p>The host clinical site. Professor Gunter Schumann is the Principal Investigator. Recruitment is from the psychiatry outpatient services, where major depressive disorder and anxiety disorder make up most of the caseload. Attending physician Yanqun Zheng co-leads recruitment and clinical characterisation.</p>
-          </article>
-          <div class="within">
-            <p class="within-label">Within Huashan Hospital</p>
-            <div class="units">
-              <article class="unit">
-                <div class="badge"><img src="images/pons.jpg" width="236" height="214" alt="PONS, Population Neuroscience and Stratified Medicine"></div>
-                <h4>Centre for Population Neuroscience and Stratified Medicine</h4>
-                <p>Led by Professor Gunter Schumann.</p>
-              </article>
-              <article class="unit">
-                <div class="badge"><img src="images/istbi.jpg" width="300" height="159" alt="ISTBI, Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University"></div>
-                <h4>Institute of Science and Technology for Brain-Inspired Intelligence</h4>
-                <p>The data-science institute on the Fudan team. Associate Professor Xiao Chang leads neuroimaging genetics there and co-leads the multi-omics work.</p>
-              </article>
-            </div>
-          </div>
+          <div class="centre-row apex">
+            <article class="unit pons">
+              <div class="badge"><img src="images/pons.jpg" width="236" height="214" alt="PONS, Population Neuroscience and Stratified Medicine"></div>
+              <p class="place">Within Huashan</p>
+              <h4>Centre for Population Neuroscience and Stratified Medicine</h4>
+              <p>Led by Professor Gunter Schumann.</p>
+            </article>
+            <article class="centre host">
+              <div class="badge"><img src="images/huashan-hospital.png" width="324" height="336" alt="Huashan Hospital of Fudan University"></div>
+              <p class="place">Shanghai · host institution</p>
+              <h3>Huashan Hospital of Fudan University</h3>
+              <p>The host clinical site. Professor Gunter Schumann is the Principal Investigator. Recruitment is from the psychiatry outpatient services, where major depressive disorder and anxiety disorder make up most of the caseload. Attending physician Yanqun Zheng co-leads recruitment and clinical characterisation.</p>
+            </article>
+            <article class="unit istbi">
+              <div class="badge"><img src="images/istbi.jpg" width="300" height="159" alt="ISTBI, Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University"></div>
+              <p class="place">Within Huashan</p>
+              <h4>Institute of Science and Technology for Brain-Inspired Intelligence</h4>
+              <p>The data-science institute on the Fudan team. Associate Professor Xiao Chang leads neuroimaging genetics there and co-leads the multi-omics work.</p>
+            </article>
           </div>
           <div class="centre-row sites">
           <article class="centre smhc">
