@@ -255,6 +255,26 @@
       gap: 0.85rem;
       margin-top: 1.1rem;
     }
+    .legal-lead { margin: 0.75rem 0 0; }
+    .legal-points {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      margin-top: 1.1rem;
+    }
+    .legal-points .card {
+      display: grid;
+      grid-template-columns: 15.5rem minmax(0, 1fr);
+      gap: 0.35rem 1.35rem;
+      align-items: start;
+    }
+    .legal-points h3 { margin: 0; }
+    .legal-points p { margin: 0; }
+    .legal-points u {
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 0.16em;
+      text-decoration-color: var(--navy);
+    }
     .design-cards {
       display: block;
       columns: 3;
@@ -564,6 +584,7 @@
       .dataset-layout { grid-template-columns: 1fr; }
       .dataset-side { position: static; }
       .design-cards { columns: 1; }
+      .legal-points .card { grid-template-columns: 1fr; }
     }
 </style>
 </head>
@@ -877,32 +898,30 @@
       <div class="wrap">
         <p class="section-index">Governance</p>
         <h2>Legal and regulatory requirements</h2>
-        <div class="prose">
-          <p>Release of these data is governed by the law of the People’s Republic of China. The host institution holds the data and carries the statutory duties. Approval by the access-review group is a scientific approval. It does not by itself satisfy a statutory requirement, and no extract is released until the host institution has cleared the requirements that apply to that request.</p>
-          <p>The host institution decides which requirements apply to a request and carries them out. Applicants should allow time for them: ethics review alone may take up to 30 days, and a Ministry decision on human genetic resource information takes longer.</p>
-        </div>
-        <div class="cards">
+        <p class="legal-lead">Release of these data is governed by the law of the People’s Republic of China. The host institution holds the data and carries the statutory duties. Approval by the access-review group is a scientific approval; it does not by itself satisfy a statutory requirement, and no extract is released until the host institution has cleared the requirements that apply to that request.</p>
+        <div class="legal-points">
           <article class="card">
             <h3>Ethics review of the secondary use</h3>
-            <p>Reusing participant data is research involving human participants. The institution that provides the data must have the proposed use reviewed by its ethics committee and must fix by agreement the scope of use, how the data are handled, and how they are disposed of at the end (Measures for the Ethics Review of Life Science and Medical Research Involving Humans, 2023, Article 28). Where a study qualifies for expedited review or for exemption, the committee records that decision; exemption does not apply where sensitive personal information is involved. The manuscript must cite the approval that covers this use (Article 29). State an ethics approval number on the form; that number is confirmed by the host institution at the time of access.</p>
+            <p>Reusing participant data is research involving human participants. The institution that provides the data must have the proposed use reviewed by its ethics committee and must fix by agreement the scope of use, how the data are handled, and how they are disposed of at the end (Measures for the Ethics Review of Life Science and Medical Research Involving Humans, 2023, Article 28). Where a study qualifies for expedited review or for exemption, the committee records that decision; exemption does not apply where sensitive personal information is involved. Journals ask authors to show that the study was approved (Article 29), so the manuscript must cite the approval that covers this use. <u>For international scientific cooperation, each party must obtain ethics review in its own country or region (Implementing Rules, National Health Commission Order No. 16, Article 30).</u> The institution itself must designate the department responsible for human genetic resources, keep an activity ledger, and review the purpose and protocol of each study (Article 10).</p>
           </article>
           <article class="card">
             <h3>Human genetic resource information</h3>
-            <p>Under the Implementing Rules of the Regulation on the Administration of Human Genetic Resources (Ministry of Science and Technology Order No. 21, in force 1 July 2023, Article 2), human genetic resource information is human gene and genome data. It does not include clinical data, imaging data, protein data or metabolic data. In this dataset, genotypes, DNA methylation and RNA sequencing are treated as human genetic resource information. Plasma proteomics is not, but it remains sensitive personal information. Planned enrolment of 680 participants is below the 3,000-participant threshold at which a collection licence would be required (Article 27).</p>
+            <p>Under the Implementing Rules of the Regulation on the Administration of Human Genetic Resources (National Health Commission Order No. 16, published 5 November 2026 and in force from publication, Article 3), <u>human genetic resource information comprises human gene, genome, transcriptome and epigenome nucleic-acid sequence information and the disease information associated with it; pure clinical, imaging, protein and metabolic data are excluded.</u> In this dataset, genotypes, DNA methylation and RNA sequencing are therefore human genetic resource information. Plasma proteomics is not, but it remains sensitive personal information. A collection license is required for large population studies of more than 10,000 participants and for collection within the published lists of important genetic families or specific regions (Article 16); planned enrolment of 680 is below that threshold. Splitting a collection, or reporting it in parts, to avoid a license is expressly prohibited (Article 16).</p>
           </article>
           <article class="card">
             <h3>Provision to an overseas recipient</h3>
-            <p>Only a Chinese unit may provide Chinese human genetic resources to an overseas recipient. An overseas organisation, or an institution established or actually controlled by one, may not collect, preserve or provide them (Article 11). Providing or opening human genetic resource information to such a recipient requires prior reporting to the Ministry of Science and Technology and submission of an information backup (Article 36). It must also pass the security review organised by the Ministry where the information may affect public health, national security or the public interest, including exome or genome sequencing information on more than 500 persons (Article 37). With 680 participants, the genomic data in this project are above the 500-person threshold, so a request that gives an overseas recipient genomic data is treated as requiring security review until the Ministry decides otherwise.</p>
+            <p>Only a Chinese unit may provide Chinese human genetic resources overseas; overseas individuals and foreign units may not (Article 9). A foreign unit includes an entity established, actually controlled, or indirectly held to the extent of 50% or more by an overseas organization or individual (Article 59). Providing or opening human genetic resource information to such a recipient requires prior reporting to the National Health Commission with an information backup, stating the purpose and use, the backup, the recipient, and a risk assessment (Article 39). Two routes are simplified. Information provided for publication or academic conference exchange completes the prior report when the data are deposited with the China National Center for Bioinformation before the paper is published or the conference takes place (Article 40). Within an approved international cooperation, information may be provided to a foreign recipient named in the application and covered by the cooperation agreement without a separate report or backup (Article 41). A change of purpose or recipient after a report has been made requires a new prior report before the change takes effect (Article 42). <u>The revised Rules no longer state a numerical security-review threshold</u>; under Article 28 of the Regulation, a provision that may affect public health, national security or the public interest must pass a security review. Until the host institution has confirmation from the National Health Commission, any request that would give an overseas recipient genomic data is treated as requiring that review.</p>
           </article>
           <article class="card">
             <h3>Personal information and cross-border access</h3>
-            <p>A psychiatric diagnosis and a location trajectory are sensitive personal information under the Personal Information Protection Law. Letting an overseas body access or process data held on a server in China counts as providing data overseas, even though the data do not leave the country (Provisions on Promoting and Regulating Cross-Border Data Flows, 2024). Where sensitive personal information of fewer than 10,000 individuals is provided in a calendar year, a standard contract with the overseas recipient or personal information protection certification is required; at or above 10,000 individuals, a security assessment must be declared. Before any such provision the host institution must give notice, obtain separate consent where the law requires it, and carry out a personal information protection impact assessment.</p>
+            <p>A psychiatric diagnosis and a location trajectory are sensitive personal information under the Personal Information Protection Law. Letting an overseas body access or process data held on a server in China counts as providing data overseas, even though the data do not leave the country (Provisions on Promoting and Regulating Cross-Border Data Flows, 2024). <u>Where sensitive personal information of fewer than 10,000 individuals is provided in a calendar year, a standard contract with the overseas recipient or personal information protection certification is required</u>; at or above 10,000 individuals, a security assessment must be declared. Counts are cumulative from 1 January of the year, and splitting the numbers to move data that should go through a security assessment onto the contract or certification route is prohibited (Measures for Personal Information Exit Certification, Article 5, in force 1 January 2026). Before any such provision the host institution must give notice, obtain separate consent where the law requires it, and carry out a personal information protection impact assessment.</p>
           </article>
           <article class="card">
             <h3>Storage, minimum necessary, and records</h3>
-            <p>Data stay on servers in the Chinese mainland. Access is granted to named individuals and is limited to the variables the approved manuscript needs. The host institution keeps a record of every extract, of the people named on it and of the period of access. Where a request involves international scientific cooperation, the Chinese unit must take part substantively throughout, all records and data must be open to the Chinese unit and backed up to it, and the two sides submit a joint report on the cooperation within six months after the approval or filing period ends (Articles 14 and 35).</p>
+            <p>Data stay on servers in the Chinese mainland. Access is granted to named individuals and is limited to the variables the approved manuscript needs. The host institution keeps a record of every extract, of the people named on it and of the period of access. A multi-centre study may not be split into separate applications (Article 32). <u>Where a request involves international scientific cooperation, the Chinese unit must take part substantively throughout, all records and data must be open to the Chinese unit and backed up to it, and the two sides submit a joint report to the National Health Commission within six months after the approval or filing period ends (Articles 31 and 35).</u> Renewal is applied for at least 30 working days before the period ends (Article 51).</p>
           </article>
         </div>
+        <p class="legal-lead">The host institution decides which requirements apply to a request and carries them out. Applicants should allow time for them: ethics review alone may take up to 30 days, and a decision by the National Health Commission on an administrative license takes 20 working days from acceptance, extendable by 10 working days, with technical assessment time excluded (Articles 45–47).</p>
       </div>
     </section>
 
@@ -1114,7 +1133,7 @@
             <li>If omics data were requested, use those data only for the analyses stated on the form.</li>
             <li>Keep participant-level data on systems inside the Chinese mainland. Do not copy it to a system outside the Chinese mainland, and do not give an overseas institution access to it or to an account.</li>
             <li>Hold ethics approval for this secondary use at the applicant’s own institution, or have applied for it, and give the approval number before an extract is released.</li>
-            <li>If the request includes genetic, methylation or RNA-sequencing data, provision to an overseas recipient, or access by one, requires prior reporting to the Ministry of Science and Technology with an information backup, and may require security review, before any data are released.</li>
+            <li>If the request includes genetic, methylation or RNA-sequencing data, provision to an overseas recipient, or access by one, requires prior reporting to the National Health Commission with an information backup, unless it is already covered by an approved international cooperation. A provision that may affect public health, national security or the public interest must pass a security review before any data are released.</li>
             <li>ZIB, IMAGEN, and STRATIFY are not released under this form.</li>
             <li>A change of aim, users, institutions, country of access, or data domain needs a written amendment or a new proposal before the change is made.</li>
             <li>When the approved period ends, delete local copies that are no longer authorised and tell the Principal Investigator.</li>
